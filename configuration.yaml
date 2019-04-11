@@ -1,0 +1,98 @@
+homeassistant:
+  name: Home
+  latitude: !secret lat
+  longitude: !secret long
+  elevation: 0
+  unit_system: imperial
+  time_zone: America/New_York
+
+frontend:
+
+config:
+
+discovery:
+  ignore:
+    - philips_hue
+    
+custom_updater:
+  component_urls:
+    - https://raw.githubusercontent.com/keatontaylor/alexa_media_player/next/custom_components.json
+    - https://raw.githubusercontent.com/keatontaylor/alexa_media_player/master/custom_components.json
+  card_urls:
+    - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
+    - https://raw.githubusercontent.com/kalkih/mini-graph-card/master/tracker.json
+    - https://raw.githubusercontent.com/ljmerza/calendar-card/master/custom_updater.json
+    
+alexa_media:
+  accounts:
+    - email: !secret amazon_email
+      password: !secret amazon_pass
+      url: amazon.com
+
+google:
+  client_id: !secret google_id
+  client_secret: !secret google_secret
+
+remote:
+  - platform: harmony
+    name: "Harmony Hub Living Room"
+    host: 192.168.50.41
+
+updater:
+
+history:
+
+ios:
+
+logger:
+
+homekit:
+  safe_mode: true
+  
+system_health:
+
+panel_iframe:
+  configurator:
+    title: "Configurator"
+    icon: mdi:wrench
+    url: https://192.168.50.12:3218
+  ide:
+    title: "IDE"
+    icon: mdi:code-braces
+    url: https://michaeldvinci.duckdns.org:8321
+  logger:
+    title: "Logger"
+    icon: mdi:card-text-outline
+    url: https://michaeldvinci.duckdns.org:4277
+  nodered:
+    title: "Node-Red"
+    icon: mdi:sitemap
+    url: https://michaeldvinci.duckdns.org:1880
+  pihole:
+    title: "Pi-hole"
+    icon: mdi:block-helper
+    url: https://michaeldvinci.duckdns.org:4865
+  portainer:
+    title: "Portainer"
+    icon: mdi:docker
+    url: https://michaeldvinci.duckdns.org:9000
+  terminal:
+    title: "Terminal"
+    icon: mdi:console
+    url: https://michaeldvinci.duckdns.org:7681
+
+http:
+  api_password: 123Mikeyv
+  ip_ban_enabled: False
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+  base_url: https://michaeldvinci.duckdns.org
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+sensor: !include sensor.yaml
+
+recorder:
+  purge_keep_days: 1
+  purge_interval: 1

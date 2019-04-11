@@ -1,0 +1,61 @@
+### Network ###
+- platform: pi_hole
+  ssl: true
+  host: 192.168.50.12:4865
+  location: ""
+  verify_ssl: false
+  monitored_conditions:
+    - ads_blocked_today
+    - ads_percentage_today
+    - dns_queries_today
+    
+- platform: template
+  sensors:
+    living_motion_all:
+      friendly_name: "Living Room Motion"
+      icon_template: >-
+        {% if is_state('binary_sensor.living_room_motion_motion', 'on') %}
+          mdi:run
+        {% else %}
+          mdi:walk
+        {% endif %}
+      value_template: >-
+        {% if is_state('binary_sensor.living_room_motion_motion', 'on') %}
+          active
+        {% else %}
+          inactive
+        {% endif %}
+- platform: template
+  sensors:
+    bedroom_motion_all:
+      friendly_name: "Bedroom Motion All"
+      icon_template: >-
+        {% if is_state('binary_sensor.bedroom_motion_motion', 'on') or is_state('binary_sensor.bedroom_multi_sensor_motion', 'on') %}
+          mdi:run
+        {% else %}
+          mdi:walk
+        {% endif %}
+      value_template: >-
+        {% if is_state('binary_sensor.bedroom_motion_motion', 'on') or is_state('binary_sensor.bedroom_multi_sensor_motion', 'on') %}
+          active
+        {% else %}
+          inactive
+        {% endif %}
+- platform: template
+  sensors:
+    bathroom_motion_all:
+      friendly_name: "Bathroom Motion All"
+      icon_template: >-
+        {% if is_state('binary_sensor.bathroom_motion_motion', 'on') or is_state('binary_sensor.shower_motion_motion', 'on') %}
+          mdi:run
+        {% else %}
+          mdi:walk
+        {% endif %}
+      value_template: >-
+        {% if is_state('binary_sensor.bathroom_motion_motion', 'on') or is_state('binary_sensor.shower_motion_motion', 'on') %}
+          active
+        {% else %}
+          inactive
+        {% endif %}
+        
+        
