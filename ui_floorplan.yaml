@@ -1,0 +1,518 @@
+resources:
+  - type: js
+    url: /local/plan-coordinates.js?v=2
+  - type: module
+    url: /customcards/github/custom-cards/tracker-card.js?track=true
+  - type: module
+    url: /local/mini-media-player-bundle.js?v=1.0.3
+  - type: js
+    url: /customcards/github/thomasloven/card-tools.js?track=true
+  - type: js
+    url: /customcards/github/thomasloven/popup-card.js?track=true
+  - type: module
+    url: /customcards/github/maykar/compact-custom-header.js?track=true
+  - type: js
+    url: /customcards/github/thomasloven/layout-card.js?track=true
+  - type: module
+    url: /local/mini-graph-card-bundle.js?v=0.3.2
+title: Mike's Apartment
+views:
+  - cards:
+      - cards:
+          - elements:
+              - entity: lock.august_smart_lock_pro
+                style:
+                  left: 7%
+                  top: 86%
+                type: state-icon
+              - entity: sensor.august
+                icon: 'mdi:cctv'
+                style:
+                  color: '#44739e'
+                  font-weight: bold
+                  left: 16%
+                  top: 82%
+                type: icon
+              - entity: sensor.august
+                icon: 'mdi:cctv'
+                style:
+                  color: '#44739e'
+                  font-weight: bold
+                  left: 28.5%
+                  top: 69%
+                  transform: scaleX(-1)
+                type: icon
+              - entity: climate.honeywell_home_thermostat
+                icon: 'mdi:thermostat'
+                style:
+                  color: '#44739e'
+                  font-weight: bold
+                  left: 30%
+                  top: 75%
+                type: icon
+              - entity: sensor.living_room_motion_temperature_measurement
+                hold_action: more-info
+                style:
+                  color: '#44739e'
+                  font-weight: bold
+                  left: 50.5%
+                  top: 73%
+                tap_action: more-info
+                type: state-label
+              - entity: light.entrance_2
+                style:
+                  left: 14%
+                  top: 86%
+                type: state-icon
+              - entity: sensor.living_motion_all
+                style:
+                  color: black
+                  left: 44.5%
+                  top: 72%
+                type: state-icon
+              - entity: light.bar_2
+                style:
+                  left: 42%
+                  top: 65%
+                type: state-icon
+              - entity: light.dining_2
+                style:
+                  left: 45.5%
+                  top: 84.5%
+                type: state-icon
+              - entity: light.hall_2
+                style:
+                  left: 56.5%
+                  top: 41%
+                type: state-icon
+              - entity: light.corner_2
+                style:
+                  left: 90%
+                  top: 89%
+                type: state-icon
+              - entity: sensor.litter_box_2
+                state_image:
+                  closed: /local/clean_closed.png
+                  open: /local/clean_open.png
+                style:
+                  left: 89.5%
+                  top: 84%
+                type: image
+              - entity: light.far_corner_2
+                style:
+                  left: 90%
+                  top: 55%
+                type: state-icon
+              - entity: group.amplifi
+                icon: 'mdi:wifi'
+                style:
+                  color: '#44739e'
+                  font-weight: bold
+                  left: 65%
+                  top: 54%
+                type: icon
+              - entity: media_player.rx_v681
+                icon: 'mdi:audio-video'
+                style:
+                  color: '#44739e'
+                  font-weight: bold
+                  left: 69.5%
+                  top: 55%
+                type: icon
+              - entity: remote.harmony_hub_living_room
+                icon: 'mdi:remote'
+                style:
+                  color: '#44739e'
+                  font-weight: bold
+                  left: 73%
+                  top: 55%
+                type: icon
+              - entity: media_player.echo_dot_living_room
+                icon: 'mdi:amazon-alexa'
+                style:
+                  color: '#44739e'
+                  font-weight: bold
+                  left: 76.5%
+                  top: 55%
+                type: icon
+              - entity: media_player.playstation_4
+                icon: 'mdi:playstation'
+                style:
+                  color: '#44739e'
+                  font-weight: bold
+                  left: 80%
+                  top: 55%
+                type: icon
+              - entity: media_player.apartment
+                icon: 'mdi:apple'
+                style:
+                  color: '#44739e'
+                  font-weight: bold
+                  left: 83.5%
+                  top: 55%
+                type: icon
+              - entity: binary_sensor.fridge_contact
+                state_image:
+                  'off': /local/fridge_closed2.png
+                  'on': /local/fridge_open2.png
+                style:
+                  left: 24%
+                  top: 44.5%
+                type: image
+              - entity: binary_sensor.freezer_contact
+                state_image:
+                  'off': /local/freezer_closed2.png
+                  'on': /local/freezer_open2.png
+                style:
+                  left: 24%
+                  top: 44.5%
+                type: image
+              - entity: sensor.freezer_temperature_measurement
+                hold_action: more-info
+                style:
+                  color: '#44739e'
+                  font-weight: bold
+                  left: 32.5%
+                  top: 30.5%
+                tap_action: more-info
+                type: state-label
+              - entity: sensor.august
+                icon: 'mdi:cctv'
+                style:
+                  color: '#44739e'
+                  font-weight: bold
+                  left: 38%
+                  top: 47%
+                type: icon
+              - entity: light.bathroom_1
+                style:
+                  left: 43%
+                  top: 15%
+                type: state-icon
+              - entity: light.bathroom_2
+                style:
+                  left: 43%
+                  top: 20%
+                tap_action: toggle
+                type: state-icon
+              - entity: light.bathroom_3
+                style:
+                  left: 43%
+                  top: 25%
+                tap_action: toggle
+                type: state-icon
+              - entity: media_player.echo_dot_bathroom
+                icon: 'mdi:amazon-alexa'
+                style:
+                  color: '#44739e'
+                  font-weight: bold
+                  left: 49%
+                  top: 21%
+                type: icon
+              - entity: sensor.bathroom_motion_all
+                style:
+                  color: black
+                  left: 48.5%
+                  top: 27.5%
+                type: state-icon
+              - entity: sensor.bathroom_motion_temperature_measurement
+                hold_action: more-info
+                style:
+                  color: '#44739e'
+                  font-weight: bold
+                  left: 53.5%
+                  top: 29%
+                tap_action: more-info
+                type: state-label
+              - entity: sensor.bedroom_temperature_sensor_temperature_measurement
+                hold_action: more-info
+                style:
+                  color: '#44739e'
+                  font-weight: bold
+                  left: 76%
+                  top: 37.5%
+                tap_action: more-info
+                type: state-label
+              - entity: media_player.echo_dot_bedroom
+                icon: 'mdi:amazon-alexa'
+                style:
+                  color: '#44739e'
+                  font-weight: bold
+                  left: 89.5%
+                  top: 16%
+                type: icon
+              - entity: light.bed_right_2
+                style:
+                  left: 89.5%
+                  top: 10.5%
+                type: state-icon
+              - entity: light.bed_left_2
+                style:
+                  left: 67.5%
+                  top: 10.5%
+                type: state-icon
+              - entity: light.bed_left_2
+                style:
+                  left: 77%
+                  top: 31%
+                type: state-icon
+              - entity: sensor.bedroom_motion_all
+                style:
+                  color: black
+                  left: 67.5%
+                  top: 36%
+                type: state-icon
+              - entity: light.bed_left_2
+                style:
+                  left: 90%
+                  top: 47%
+                type: state-icon
+              - entity: media_player.bedroom
+                icon: 'mdi:google-home'
+                style:
+                  color: '#44739e'
+                  font-weight: bold
+                  left: 73%
+                  top: 47%
+                type: icon
+              - entity: media_player.michael_s_fire_tv
+                icon: 'mdi:amazon'
+                style:
+                  color: '#44739e'
+                  font-weight: bold
+                  left: 76.5%
+                  top: 47%
+                type: icon
+              - clock_date: true
+                clock_format: 12
+                menu: show
+                notifications: clock
+                options: show
+                type: 'custom:compact-custom-header'
+                voice: show
+            image: /local/floorplan7.png
+            panel: true
+            type: picture-elements
+        type: horizontal-stack
+    icon: 'mdi:home-assistant'
+    id: floorplan
+    panel: true
+    popup_cards:
+      climate.honeywell_home_thermostat:
+        card:
+          entity: climate.honeywell_home_thermostat
+          type: thermostat
+        title: Lyric Round
+      group.amplifi:
+        card:
+          cards:
+            - entities:
+                - sensor.amplifi_router_bytes_received
+                - sensor.amplifi_router_bytes_sent
+              hours_to_show: 24
+              points_per_hour: 2
+              type: 'custom:mini-graph-card'
+            - entities:
+                - sensor.amplifi_router_packets_received
+                - sensor.amplifi_router_packets_sent
+              hours_to_show: 24
+              points_per_hour: 2
+              type: 'custom:mini-graph-card'
+          type: vertical-stack
+        title: AmpliFi Router
+      media_player.apartment:
+        card:
+          artwork: cover
+          entity: media_player.apartment
+          icon: 'mdi:apple'
+          type: 'custom:mini-media-player'
+        title: Apple TV 4K
+      media_player.echo_dot_bathroom:
+        card:
+          artwork: cover
+          entity: media_player.echo_dot_bathroom
+          icon: 'mdi:amazon-alexa'
+          type: 'custom:mini-media-player'
+        title: Bathroom Echo Dot
+      media_player.echo_dot_bedroom:
+        card:
+          artwork: cover
+          entity: media_player.echo_dot_bedroom
+          icon: 'mdi:amazon-alexa'
+          type: 'custom:mini-media-player'
+        title: Bedroom Echo Dot
+      media_player.echo_dot_living_room:
+        card:
+          artwork: cover
+          entity: media_player.echo_dot_living_room
+          icon: 'mdi:amazon-alexa'
+          type: 'custom:mini-media-player'
+        title: Living Room Echo Dot
+      media_player.michael_s_fire_tv:
+        card:
+          artwork: cover
+          entity: media_player.michael_s_fire_tv
+          icon: 'mdi:amazon'
+          type: 'custom:mini-media-player'
+        title: Bedroom Fire TV 4K
+      media_player.playstation_4:
+        card:
+          artwork: cover
+          entity: media_player.playstation_4
+          type: 'custom:mini-media-player'
+        title: PS4
+      media_player.rx_v681:
+        card:
+          artwork: cover
+          entity: media_player.rx_v681
+          icon: 'mdi:audio-video'
+          type: 'custom:mini-media-player'
+        title: Yamaha Receiver
+    theme: dark-mode
+    title: Floorplan
+  - cards:
+      - clock_date: true
+        clock_format: 12
+        main_config: true
+        menu: show
+        notifications: clock
+        options: show
+        type: 'custom:compact-custom-header'
+        voice: show
+      - type: 'custom:tracker-card'
+      - entities:
+          - entity: sensor.pi_hole_ads_blocked_today
+          - entity: sensor.pi_hole_ads_percentage_blocked_today
+          - entity: sensor.pi_hole_dns_queries_today
+        title: Pi-Hole
+        type: entities
+    icon: 'mdi:chart-donut'
+    title: Other
+  - cards:
+      - clock_date: true
+        clock_format: 12
+        main_config: true
+        menu: show
+        notifications: clock
+        options: show
+        type: 'custom:compact-custom-header'
+        voice: show
+      - cards:
+          - entity: climate.honeywell_home_thermostat
+            type: thermostat
+          - entities:
+              - lock.august_smart_lock_pro
+            show_header_toggle: false
+            title: August Smart Lock
+            type: entities
+          - entities:
+              - sensor.living_room_motion_temperature_measurement
+            show_header_toggle: false
+            type: entities
+        type: vertical-stack
+      - cards:
+          - artwork: cover
+            entity: media_player.rx_v681
+            icon: 'mdi:audio-video'
+            type: 'custom:mini-media-player'
+          - artwork: cover
+            entity: media_player.apartment
+            icon: 'mdi:apple'
+            type: 'custom:mini-media-player'
+          - artwork: cover
+            entity: media_player.echo_dot_living_room
+            icon: 'mdi:amazon-alexa'
+            type: 'custom:mini-media-player'
+          - artwork: cover
+            entity: media_player.playstation_4
+            type: 'custom:mini-media-player'
+        type: vertical-stack
+      - cards:
+          - entities:
+              - sensor.amplifi_router_bytes_received
+              - sensor.amplifi_router_bytes_sent
+            hours_to_show: 24
+            points_per_hour: 2
+            type: 'custom:mini-graph-card'
+          - entities:
+              - sensor.amplifi_router_packets_received
+              - sensor.amplifi_router_packets_sent
+            hours_to_show: 24
+            points_per_hour: 2
+            type: 'custom:mini-graph-card'
+        type: vertical-stack
+    id: home
+    show_header_toggle: true
+    title: Home
+  - cards:
+      - clock_date: true
+        clock_format: 12
+        main_config: true
+        menu: show
+        notifications: clock
+        options: show
+        type: 'custom:compact-custom-header'
+        voice: show
+      - cards:
+          - entities:
+              - sensor.bathroom_motion_all
+            show_header_toggle: false
+            title: Bathroom Motion All
+            type: entities
+          - artwork: cover
+            entity: media_player.echo_dot_bathroom
+            icon: 'mdi:amazon-alexa'
+            type: 'custom:mini-media-player'
+        type: vertical-stack
+    id: bathroom
+    show_header_toggle: true
+    title: Bathroom
+  - cards:
+      - clock_date: true
+        clock_format: 12
+        main_config: true
+        menu: show
+        notifications: clock
+        options: show
+        type: 'custom:compact-custom-header'
+        voice: show
+      - entities:
+          - sensor.fridge_temperature_measurement
+          - sensor.freezer_temperature_measurement
+          - sensor.fridge_battery
+          - sensor.freezer_battery
+        type: entities
+    id: kitchen
+    show_header_toggle: true
+    title: Kitchen
+  - cards:
+      - clock_date: true
+        clock_format: 12
+        main_config: true
+        menu: show
+        notifications: clock
+        options: show
+        type: 'custom:compact-custom-header'
+        voice: show
+      - cards:
+          - entities:
+              - sensor.bedroom_motion_all
+            type: entities
+          - entities:
+              - sensor.bedroom_motion_temperature_measurement
+              - sensor.bedroom_multi_sensor_temperature_measurement
+            type: entities
+        type: vertical-stack
+      - cards:
+          - artwork: cover
+            entity: media_player.echo_dot_bedroom
+            icon: 'mdi:amazon-alexa'
+            type: 'custom:mini-media-player'
+          - artwork: cover
+            entity: media_player.michael_s_fire_tv
+            icon: 'mdi:amazon'
+            type: 'custom:mini-media-player'
+        type: vertical-stack
+    id: bedroom
+    show_header_toggle: true
+    title: Bedroom
