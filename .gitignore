@@ -1,0 +1,33 @@
+# Example .gitignore file for your config dir.
+# A * ensures that everything will be ignored.
+*
+
+# You can whitelist files/folders with !, these will not be ignored.
+!*.yaml
+!.gitignore
+!*.md
+!floorplan
+!custom-components/
+!custom-components/*
+!www
+!www/*
+!scripts
+!*.jpg
+!*.svc
+!*.png
+!*.gif
+!.storage/lovelace
+!images/
+!images/*
+
+# Ignore folders.
+.storage
+.cloud
+.google.token
+
+# Ensure these YAML files are ignored, otherwise your secret data/credentials will leak.
+google_calendars.yaml
+ip_bans.yaml
+secrets.yaml
+known_devices.yaml
+node-red/flows_cred.json
