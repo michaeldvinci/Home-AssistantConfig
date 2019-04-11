@@ -82,7 +82,6 @@ panel_iframe:
     url: https://michaeldvinci.duckdns.org:7681
 
 http:
-  api_password: 123Mikeyv
   ip_ban_enabled: False
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
