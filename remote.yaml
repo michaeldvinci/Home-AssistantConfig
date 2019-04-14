@@ -1,0 +1,6 @@
+- platform: harmony
+  name: "Harmony Hub Bedroom"
+  host: 192.168.50.40
+- platform: harmony
+  name: "Harmony Hub Living Room"
+  host: 192.168.50.41

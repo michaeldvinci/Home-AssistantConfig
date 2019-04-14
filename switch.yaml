@@ -1,0 +1,60 @@
+- platform: template
+  switches:
+    watch_cable_tv:
+      friendly_name: Watch Cable TV
+      value_template: "{{ is_state_attr('remote.harmony_hub_living_room', 'current_activity', 'Watch tv') }}"
+      turn_on:
+        service: remote.turn_on
+        data:
+          entity_id: remote.harmony_hub_living_room
+          activity: 'Watch TV'
+      turn_off:
+        service: remote.turn_on
+        data:
+          entity_id: remote.harmony_hub_living_room
+          activity: 'PowerOff'
+- platform: template
+  switches:
+    watch_apple_tv:
+      friendly_name: Watch Apple TV
+      value_template: "{{ is_state_attr('remote.harmony_hub_living_room', 'current_activity', 'Watch Apple TV') }}"
+      turn_on:
+        service: remote.turn_on
+        data:
+          entity_id: remote.harmony_hub_living_room
+          activity: 'Watch Apple TV'
+      turn_off:
+        service: remote.turn_on
+        data:
+          entity_id: remote.harmony_hub_living_room
+          activity: 'PowerOff'
+- platform: template
+  switches:
+    start_ps4:
+      friendly_name: Start PS4
+      value_template: "{{ is_state_attr('remote.harmony_hub_living_room', 'current_activity', 'Start PS4') }}"
+      turn_on:
+        service: remote.turn_on
+        data:
+          entity_id: remote.harmony_hub_living_room
+          activity: 'Start PS4'
+      turn_off:
+        service: remote.turn_on
+        data:
+          entity_id: remote.harmony_hub_living_room
+          activity: 'PowerOff'
+- platform: template
+  switches:
+    nintendo_switch:
+      friendly_name: Nintendo Switch
+      value_template: "{{ is_state_attr('remote.harmony_hub_living_room', 'current_activity', 'Nintendo Switch') }}"
+      turn_on:
+        service: remote.turn_on
+        data:
+          entity_id: remote.harmony_hub_living_room
+          activity: 'Nintendo Switch'
+      turn_off:
+        service: remote.turn_on
+        data:
+          entity_id: remote.harmony_hub_living_room
+          activity: 'PowerOff'

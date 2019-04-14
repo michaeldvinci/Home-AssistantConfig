@@ -33,11 +33,6 @@ google:
   client_id: !secret google_id
   client_secret: !secret google_secret
 
-remote:
-  - platform: harmony
-    name: "Harmony Hub Living Room"
-    host: 192.168.50.41
-
 updater:
 
 history:
@@ -47,7 +42,8 @@ ios:
 logger:
 
 homekit:
-  safe_mode: true
+  filter:
+    exclude_domains: [calendar]
   
 system_health:
 
@@ -91,6 +87,9 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 sensor: !include sensor.yaml
+switch: !include switch.yaml
+remote: !include remote.yaml
+camera: !include camera.yaml
 
 recorder:
   purge_keep_days: 1

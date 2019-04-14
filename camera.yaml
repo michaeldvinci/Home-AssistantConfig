@@ -1,0 +1,3 @@
+- platform: ffmpeg
+  name: rtsp_1
+  input: !secret wyze_cam_1
