@@ -11,6 +11,8 @@
 !custom-components/*
 !www
 !www/*
+!www/custom-cards/
+!www/custom-cards/*
 !scripts
 !*.jpg
 !*.svc

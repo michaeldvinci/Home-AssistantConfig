@@ -8,6 +8,28 @@
     - ads_blocked_today
     - ads_percentage_today
     - dns_queries_today
+        
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+      arg: /
+    - type: disk_use
+      arg: /
+    - type: disk_free
+      arg: /
+    - type: memory_use
+    - type: memory_free
+    - type: processor_use
+    - type: last_boot
+    - type: network_in
+      arg: eth0
+    - type: network_out
+      arg: eth0
+    - type: ipv4_address
+      arg: eth0
+    - type: load_1m
+    - type: load_5m
+    - type: load_15m
     
 - platform: template
   sensors:
@@ -57,5 +79,3 @@
         {% else %}
           inactive
         {% endif %}
-        
-        
