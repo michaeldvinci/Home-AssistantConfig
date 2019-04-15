@@ -1,20 +1,24 @@
 resources:
   - type: js
-    url: /local/plan-coordinates.js?v=2
+    url: /local/custom-cards/plan-coordinates.js?v=2
   - type: module
-    url: /customcards/github/custom-cards/tracker-card.js?track=true
+    url: /local/custom-cards/mini-media-player-bundle.js?v=1.0.3
   - type: module
-    url: /local/mini-media-player-bundle.js?v=1.0.3
+    url: /local/custom-cards/mini-graph-card-bundle.js?v=0.3.2
+  - type: module
+    url: /local/custom-cards/radial-menu.js
+  - type: js
+    url: /local/custom-cards/calendar-card.js?track=true
   - type: js
     url: /customcards/github/thomasloven/card-tools.js?track=true
   - type: js
     url: /customcards/github/thomasloven/popup-card.js?track=true
-  - type: module
-    url: /customcards/github/maykar/compact-custom-header.js?track=true
   - type: js
     url: /customcards/github/thomasloven/layout-card.js?track=true
   - type: module
-    url: /local/mini-graph-card-bundle.js?v=0.3.2
+    url: /customcards/github/maykar/compact-custom-header.js?track=true
+  - type: module
+    url: /customcards/github/custom-cards/tracker-card.js?track=true
 title: Mike's Apartment
 views:
   - cards:
@@ -25,7 +29,7 @@ views:
                   left: 7%
                   top: 86%
                 type: state-icon
-              - entity: sensor.august
+              - entity: camera.rtsp_1
                 icon: 'mdi:cctv'
                 style:
                   color: '#44739e'
@@ -267,8 +271,8 @@ views:
                   left: 90%
                   top: 47%
                 type: state-icon
-              - entity: media_player.bedroom
-                icon: 'mdi:google-home'
+              - entity: remote.harmony_hub_bedroom
+                icon: 'mdi:remote'
                 style:
                   color: '#44739e'
                   font-weight: bold
@@ -281,6 +285,14 @@ views:
                   color: '#44739e'
                   font-weight: bold
                   left: 76.5%
+                  top: 47%
+                type: icon
+              - entity: media_player.bedroom
+                icon: 'mdi:google-home'
+                style:
+                  color: '#44739e'
+                  font-weight: bold
+                  left: 80%
                   top: 47%
                 type: icon
               - clock_date: true
@@ -298,6 +310,12 @@ views:
     id: floorplan
     panel: true
     popup_cards:
+      camera.rtsp_1:
+        card:
+          camera_image: camera.rtsp_1
+          entity: camera.rtsp_1
+          name: Front Door Cam
+          type: picture-entity
       climate.honeywell_home_thermostat:
         card:
           entity: climate.honeywell_home_thermostat
@@ -368,6 +386,33 @@ views:
           icon: 'mdi:audio-video'
           type: 'custom:mini-media-player'
         title: Yamaha Receiver
+      remote.harmony_hub_living_room:
+        card:
+          default_open: true
+          icon: 'mdi:remote'
+          items:
+            - entity: switch.watch_cable_tv
+              icon: 'mdi:television-classic'
+              name: Watch Cable TV
+              tap_action:
+                action: toggle
+            - entity: switch.watch_apple_tv
+              icon: 'mdi:apple'
+              name: Watch Apple TV
+              tap_action:
+                action: toggle
+            - entity: switch.nintend_switch
+              icon: 'mdi:nintendo-switch'
+              name: Nintendo Switch
+              tap_action:
+                action: toggle
+            - entity: switch.start_ps4
+              icon: 'mdi:playstation'
+              name: Start PS4
+              tap_action:
+                action: toggle
+          name: Living Room Harmony Hub
+          type: 'custom:radial-menu'
     theme: dark-mode
     title: Floorplan
   - cards:
@@ -379,14 +424,70 @@ views:
         options: show
         type: 'custom:compact-custom-header'
         voice: show
-      - type: 'custom:tracker-card'
-      - entities:
-          - entity: sensor.pi_hole_ads_blocked_today
-          - entity: sensor.pi_hole_ads_percentage_blocked_today
-          - entity: sensor.pi_hole_dns_queries_today
-        title: Pi-Hole
-        type: entities
+      - cards:
+          - type: 'custom:tracker-card'
+          - entities:
+              - entity: sensor.pi_hole_ads_blocked_today
+              - entity: sensor.pi_hole_ads_percentage_blocked_today
+              - entity: sensor.pi_hole_dns_queries_today
+            title: Pi-Hole
+            type: entities
+        type: vertical-stack
+      - cards:
+          - camera_image: camera.rtsp_1
+            entity: camera.rtsp_1
+            name: Front Door Cam
+            type: picture-entity
+        type: vertical-stack
     icon: 'mdi:chart-donut'
+    title: Other
+  - cards:
+      - clock_date: true
+        clock_format: 12
+        main_config: true
+        menu: show
+        notifications: clock
+        options: show
+        type: 'custom:compact-custom-header'
+        voice: show
+      - cards:
+          - entities:
+              - entity: sensor.disk_use_percent
+              - entity: sensor.disk_use
+              - entity: sensor.disk_free
+              - entity: sensor.memory_use
+              - entity: sensor.memory_free
+              - entity: sensor.processor_use
+              - entity: sensor.last_boot
+              - entity: sensor.network_in_eth0
+              - entity: sensor.network_out_eth0
+              - entity: sensor.ipv4_address_eth0
+              - entity: sensor.load_1m
+              - entity: sensor.load_5m
+              - entity: sensor.load_15m
+            name: System Health
+            type: entities
+        type: vertical-stack
+      - cards:
+          - entities:
+              - calendar.bills
+              - calendar.events
+              - calendar.gwu
+              - calendar.gym_time
+              - calendar.http_followshows_com_ical_9oejn9ol
+              - calendar.killshot_burgundy
+              - calendar.michaeldvinci_gmail_com
+              - calendar.miro
+              - calendar.potential_trips
+              - calendar.pre_order
+              - calendar.things_to_remember
+              - calendar.work_solers
+            progressBar: true
+            showMultiDay: true
+            timeFormat: 'hh:mm a'
+            type: 'custom:calendar-card'
+        type: vertical-stack
+    icon: 'mdi:calendar-multiselect'
     title: Other
   - cards:
       - clock_date: true
@@ -441,9 +542,11 @@ views:
             points_per_hour: 2
             type: 'custom:mini-graph-card'
         type: vertical-stack
+    badges: []
     id: home
     show_header_toggle: true
     title: Home
+    icon: 'mdi:home-circle'
   - cards:
       - clock_date: true
         clock_format: 12
@@ -464,9 +567,11 @@ views:
             icon: 'mdi:amazon-alexa'
             type: 'custom:mini-media-player'
         type: vertical-stack
+    badges: []
     id: bathroom
     show_header_toggle: true
     title: Bathroom
+    icon: 'mdi:human-male-female'
   - cards:
       - clock_date: true
         clock_format: 12
@@ -482,9 +587,11 @@ views:
           - sensor.fridge_battery
           - sensor.freezer_battery
         type: entities
+    badges: []
     id: kitchen
     show_header_toggle: true
     title: Kitchen
+    icon: 'mdi:fridge'
   - cards:
       - clock_date: true
         clock_format: 12
@@ -513,6 +620,8 @@ views:
             icon: 'mdi:amazon'
             type: 'custom:mini-media-player'
         type: vertical-stack
+    badges: []
     id: bedroom
     show_header_toggle: true
     title: Bedroom
+    icon: 'mdi:hotel'
