@@ -175,6 +175,17 @@
                                             "type": "state-icon"
                                         },
                                         {
+                                            "entity": "group.system_monitor",
+                                            "icon": "mdi:raspberry-pi",
+                                            "style": {
+                                                "color": "#44739e",
+                                                "font-weight": "bold",
+                                                "left": "61%",
+                                                "top": "54%"
+                                            },
+                                            "type": "icon"
+                                        },
+                                        {
                                             "entity": "group.amplifi",
                                             "icon": "mdi:wifi",
                                             "style": {
