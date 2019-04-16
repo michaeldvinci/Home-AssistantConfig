@@ -12,6 +12,8 @@ resources:
   - type: js
     url: /customcards/github/thomasloven/card-tools.js?track=true
   - type: js
+    url: /customcards/github/thomasloven/layout-card.js?track=true
+  - type: js
     url: /customcards/github/thomasloven/popup-card.js?track=true
   - type: js
     url: /customcards/github/thomasloven/layout-card.js?track=true
@@ -23,10 +25,29 @@ title: Mike's Apartment
 views:
   - cards:
       - cards:
+          - entities:
+              - calendar.bills
+              - calendar.events
+              - calendar.gwu
+              - calendar.gym_time
+              - calendar.http_followshows_com_ical_9oejn9ol
+              - calendar.killshot_burgundy
+              - calendar.michaeldvinci_gmail_com
+              - calendar.miro
+              - calendar.potential_trips
+              - calendar.pre_order
+              - calendar.things_to_remember
+              - calendar.work_solers
+            numberOfDays: 2
+            progressBar: true
+            showMultiDay: true
+            timeFormat: 'hh:mm a'
+            title: false
+            type: 'custom:calendar-card'
           - elements:
               - entity: lock.august_smart_lock_pro
                 style:
-                  left: 7%
+                  left: 8%
                   top: 86%
                 type: state-icon
               - entity: camera.rtsp_1
@@ -313,7 +334,12 @@ views:
             image: /local/floorplan7.png
             panel: true
             type: picture-elements
-        type: horizontal-stack
+        column_num: 2
+        layout: horizontal
+        max_width:
+          - 30%
+          - 70%
+        type: 'custom:layout-card'
     icon: 'mdi:home-assistant'
     id: floorplan
     panel: true
@@ -497,7 +523,8 @@ views:
         type: vertical-stack
     icon: 'mdi:calendar-multiselect'
     title: Other
-  - cards:
+  - badges: []
+    cards:
       - clock_date: true
         clock_format: 12
         main_config: true
@@ -550,12 +577,12 @@ views:
             points_per_hour: 2
             type: 'custom:mini-graph-card'
         type: vertical-stack
-    badges: []
+    icon: 'mdi:home-circle'
     id: home
     show_header_toggle: true
     title: Home
-    icon: 'mdi:home-circle'
-  - cards:
+  - badges: []
+    cards:
       - clock_date: true
         clock_format: 12
         main_config: true
@@ -575,12 +602,12 @@ views:
             icon: 'mdi:amazon-alexa'
             type: 'custom:mini-media-player'
         type: vertical-stack
-    badges: []
+    icon: 'mdi:human-male-female'
     id: bathroom
     show_header_toggle: true
     title: Bathroom
-    icon: 'mdi:human-male-female'
-  - cards:
+  - badges: []
+    cards:
       - clock_date: true
         clock_format: 12
         main_config: true
@@ -595,12 +622,12 @@ views:
           - sensor.fridge_battery
           - sensor.freezer_battery
         type: entities
-    badges: []
+    icon: 'mdi:fridge'
     id: kitchen
     show_header_toggle: true
     title: Kitchen
-    icon: 'mdi:fridge'
-  - cards:
+  - badges: []
+    cards:
       - clock_date: true
         clock_format: 12
         main_config: true
@@ -628,8 +655,7 @@ views:
             icon: 'mdi:amazon'
             type: 'custom:mini-media-player'
         type: vertical-stack
-    badges: []
+    icon: 'mdi:hotel'
     id: bedroom
     show_header_toggle: true
     title: Bedroom
-    icon: 'mdi:hotel'

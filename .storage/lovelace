@@ -28,6 +28,10 @@
                 },
                 {
                     "type": "js",
+                    "url": "/customcards/github/thomasloven/layout-card.js?track=true"
+                },
+                {
+                    "type": "js",
                     "url": "/customcards/github/thomasloven/popup-card.js?track=true"
                 },
                 {
@@ -50,11 +54,33 @@
                         {
                             "cards": [
                                 {
+                                    "entities": [
+                                        "calendar.bills",
+                                        "calendar.events",
+                                        "calendar.gwu",
+                                        "calendar.gym_time",
+                                        "calendar.http_followshows_com_ical_9oejn9ol",
+                                        "calendar.killshot_burgundy",
+                                        "calendar.michaeldvinci_gmail_com",
+                                        "calendar.miro",
+                                        "calendar.potential_trips",
+                                        "calendar.pre_order",
+                                        "calendar.things_to_remember",
+                                        "calendar.work_solers"
+                                    ],
+                                    "numberOfDays": 2,
+                                    "progressBar": true,
+                                    "showMultiDay": true,
+                                    "timeFormat": "hh:mm a",
+                                    "title": false,
+                                    "type": "custom:calendar-card"
+                                },
+                                {
                                     "elements": [
                                         {
                                             "entity": "lock.august_smart_lock_pro",
                                             "style": {
-                                                "left": "7%",
+                                                "left": "8%",
                                                 "top": "86%"
                                             },
                                             "type": "state-icon"
@@ -468,7 +494,13 @@
                                     "type": "picture-elements"
                                 }
                             ],
-                            "type": "horizontal-stack"
+                            "column_num": 2,
+                            "layout": "horizontal",
+                            "max_width": [
+                                "30%",
+                                "70%"
+                            ],
+                            "type": "custom:layout-card"
                         }
                     ],
                     "icon": "mdi:home-assistant",
