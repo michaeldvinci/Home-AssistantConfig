@@ -4,11 +4,7 @@
             "resources": [
                 {
                     "type": "js",
-                    "url": "/local/custom-cards/plan-coordinates.js?v=2"
-                },
-                {
-                    "type": "module",
-                    "url": "/local/custom-cards/mini-media-player-bundle.js?v=1.0.3"
+                    "url": "/local/custom-cards/calendar-card.js?track=true"
                 },
                 {
                     "type": "module",
@@ -16,11 +12,27 @@
                 },
                 {
                     "type": "module",
-                    "url": "/local/custom-cards/radial-menu.js"
+                    "url": "/local/custom-cards/mini-media-player-bundle.js?v=1.0.3"
                 },
                 {
                     "type": "js",
-                    "url": "/local/custom-cards/calendar-card.js?track=true"
+                    "url": "/local/custom-cards/plan-coordinates.js?v=2"
+                },
+                {
+                    "type": "module",
+                    "url": "/local/custom-cards/radial-menu.js"
+                },
+                {
+                    "type": "module",
+                    "url": "/customcards/github/custom-cards/tracker-card.js?track=true"
+                },
+                {
+                    "type": "module",
+                    "url": "/customcards/github/nervetattoo/simple-thermostat.js?track=true"
+                },
+                {
+                    "type": "module",
+                    "url": "/customcards/github/maykar/compact-custom-header.js?track=true"
                 },
                 {
                     "type": "js",
@@ -33,18 +45,6 @@
                 {
                     "type": "js",
                     "url": "/customcards/github/thomasloven/popup-card.js?track=true"
-                },
-                {
-                    "type": "js",
-                    "url": "/customcards/github/thomasloven/layout-card.js?track=true"
-                },
-                {
-                    "type": "module",
-                    "url": "/customcards/github/maykar/compact-custom-header.js?track=true"
-                },
-                {
-                    "type": "module",
-                    "url": "/customcards/github/custom-cards/tracker-card.js?track=true"
                 }
             ],
             "title": "Mike's Apartment",
@@ -63,6 +63,7 @@
                                         "calendar.killshot_burgundy",
                                         "calendar.michaeldvinci_gmail_com",
                                         "calendar.miro",
+                                        "calendar.people",
                                         "calendar.potential_trips",
                                         "calendar.pre_order",
                                         "calendar.things_to_remember",
@@ -71,6 +72,7 @@
                                     "numberOfDays": 2,
                                     "progressBar": true,
                                     "showMultiDay": true,
+                                    "startFromToday": true,
                                     "timeFormat": "hh:mm a",
                                     "title": false,
                                     "type": "custom:calendar-card"
@@ -80,6 +82,7 @@
                                         {
                                             "entity": "lock.august_smart_lock_pro",
                                             "style": {
+                                                "color": "#44739e",
                                                 "left": "8%",
                                                 "top": "86%"
                                             },
@@ -134,6 +137,7 @@
                                         {
                                             "entity": "light.entrance_2",
                                             "style": {
+                                                "color": "#44739e",
                                                 "left": "14%",
                                                 "top": "86%"
                                             },
@@ -159,6 +163,7 @@
                                         {
                                             "entity": "light.dining_2",
                                             "style": {
+                                                "color": "#44739e",
                                                 "left": "45.5%",
                                                 "top": "84.5%"
                                             },
@@ -408,6 +413,7 @@
                                         {
                                             "entity": "light.bed_right_2",
                                             "style": {
+                                                "color": "#44739e",
                                                 "left": "89.5%",
                                                 "top": "10.5%"
                                             },
@@ -416,6 +422,7 @@
                                         {
                                             "entity": "light.bed_left_2",
                                             "style": {
+                                                "color": "#44739e",
                                                 "left": "67.5%",
                                                 "top": "10.5%"
                                             },
@@ -424,6 +431,7 @@
                                         {
                                             "entity": "light.bed_left_2",
                                             "style": {
+                                                "color": "#44739e",
                                                 "left": "77%",
                                                 "top": "31%"
                                             },
@@ -489,7 +497,7 @@
                                             "voice": "show"
                                         }
                                     ],
-                                    "image": "/local/floorplan7.png",
+                                    "image": "/local/floorplan_grey2.png",
                                     "panel": true,
                                     "type": "picture-elements"
                                 }
@@ -672,21 +680,6 @@
                             "cards": [
                                 {
                                     "type": "custom:tracker-card"
-                                },
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "sensor.pi_hole_ads_blocked_today"
-                                        },
-                                        {
-                                            "entity": "sensor.pi_hole_ads_percentage_blocked_today"
-                                        },
-                                        {
-                                            "entity": "sensor.pi_hole_dns_queries_today"
-                                        }
-                                    ],
-                                    "title": "Pi-Hole",
-                                    "type": "entities"
                                 }
                             ],
                             "type": "vertical-stack"
@@ -772,29 +765,24 @@
                             "cards": [
                                 {
                                     "entities": [
-                                        "calendar.bills",
-                                        "calendar.events",
-                                        "calendar.gwu",
-                                        "calendar.gym_time",
-                                        "calendar.http_followshows_com_ical_9oejn9ol",
-                                        "calendar.killshot_burgundy",
-                                        "calendar.michaeldvinci_gmail_com",
-                                        "calendar.miro",
-                                        "calendar.potential_trips",
-                                        "calendar.pre_order",
-                                        "calendar.things_to_remember",
-                                        "calendar.work_solers"
+                                        {
+                                            "entity": "sensor.pi_hole_ads_blocked_today"
+                                        },
+                                        {
+                                            "entity": "sensor.pi_hole_ads_percentage_blocked_today"
+                                        },
+                                        {
+                                            "entity": "sensor.pi_hole_dns_queries_today"
+                                        }
                                     ],
-                                    "progressBar": true,
-                                    "showMultiDay": true,
-                                    "timeFormat": "hh:mm a",
-                                    "type": "custom:calendar-card"
+                                    "title": "Pi-Hole",
+                                    "type": "entities"
                                 }
                             ],
                             "type": "vertical-stack"
                         }
                     ],
-                    "icon": "mdi:calendar-multiselect",
+                    "icon": "mdi:raspberry-pi",
                     "title": "Other"
                 },
                 {
