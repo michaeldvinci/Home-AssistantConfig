@@ -1,0 +1,47 @@
+light.bar_2:
+  templates:
+    rgb_color: "if (state === 'off') return [68, 115, 158];"
+    
+light.bathroom_1:
+  templates:
+    rgb_color: "if (state === 'off') return [68, 115, 158];"
+
+light.bathroom_2:
+  templates:
+    rgb_color: "if (state === 'off') return [68, 115, 158];"
+
+light.bathroom_3:
+  templates:
+    rgb_color: "if (state === 'off') return [68, 115, 158];"
+
+light.bed_left_2:
+  templates:
+    rgb_color: "if (state === 'off') return [68, 115, 158];"
+
+light.bed_right_2:
+  templates:
+    rgb_color: "if (state === 'off') return [68, 115, 158];"
+
+light.bedroom_overhead:
+  templates:
+    rgb_color: "if (state === 'off') return [68, 115, 158];"
+
+light.corner_2:
+  templates:
+    rgb_color: "if (state === 'off') return [68, 115, 158];"
+
+light.dining_2:
+  templates:
+    rgb_color: "if (state === 'off') return [68, 115, 158];"
+
+light.entrance_2:
+  templates:
+    rgb_color: "if (state === 'off') return [68, 115, 158];"
+
+light.far_corner_2:
+  templates:
+    rgb_color: "if (state === 'off') return [68, 115, 158];"
+
+light.hall_2:
+  templates:
+    rgb_color: "if (state === 'off') return [68, 115, 158];"

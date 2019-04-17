@@ -369,7 +369,7 @@
                                         {
                                             "entity": "sensor.bathroom_motion_all",
                                             "style": {
-                                                "color": "black",
+                                                "color": "#44739e",
                                                 "left": "48.5%",
                                                 "top": "27.5%"
                                             },
@@ -505,8 +505,8 @@
                             "column_num": 2,
                             "layout": "horizontal",
                             "max_width": [
-                                "30%",
-                                "70%"
+                                "27%",
+                                "73%"
                             ],
                             "type": "custom:layout-card"
                         }

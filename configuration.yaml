@@ -5,6 +5,7 @@ homeassistant:
   elevation: 0
   unit_system: imperial
   time_zone: America/New_York
+  customize: !include customize.yaml
 
 frontend:
   themes: !include themes.yaml
@@ -51,10 +52,6 @@ homekit:
 system_health:
 
 panel_iframe:
-  configurator:
-    title: "Configurator"
-    icon: mdi:wrench
-    url: https://192.168.50.12:3218
   ide:
     title: "IDE"
     icon: mdi:code-braces
@@ -75,10 +72,6 @@ panel_iframe:
     title: "Portainer"
     icon: mdi:docker
     url: https://michaeldvinci.duckdns.org:9000
-  terminal:
-    title: "Terminal"
-    icon: mdi:console
-    url: https://michaeldvinci.duckdns.org:7681
 
 http:
   ip_ban_enabled: False
