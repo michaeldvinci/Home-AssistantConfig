@@ -2502,31 +2502,74 @@ let RadialMenu = class RadialMenu extends LitElement {
       <nav class="circular-menu">
         <div class="circle">
           ${this._config.items.map((item, index) => {
-            return html `
-              <ha-icon
-                @click="${this._handleTap}"
-                .config="${item}"
-                .icon="${item.icon}"
-                .title="${item.name}"
-                style="
+            return item.entity_picture
+                ? html `
+                  <hui-image
+                    @click="${this._handleTap}"
+                    .config="${item}"
+                    .hass="${this.hass}"
+                    .image="${item.entity_picture}"
+                    .title="${item.name}"
+                    style="
+                left:calc(${(50 -
+                    35 *
+                        Math.cos(-0.5 * Math.PI -
+                            2 *
+                                (1 / this._config.items.length) *
+                                index *
+                                Math.PI)).toFixed(4) + "%"} - 10px);
+                top:calc(${(50 +
+                    35 *
+                        Math.sin(-0.5 * Math.PI -
+                            2 *
+                                (1 / this._config.items.length) *
+                                index *
+                                Math.PI)).toFixed(4) + "%"} - 10px);"
+                  ></hui-image>
+                `
+                : html `
+                  <ha-icon
+                    @click="${this._handleTap}"
+                    .config="${item}"
+                    .icon="${item.icon}"
+                    .title="${item.name}"
+                    style="
                 left:${(50 -
-                35 *
-                    Math.cos(-0.5 * Math.PI -
-                        2 * (1 / this._config.items.length) * index * Math.PI)).toFixed(4) + "%"};
+                    35 *
+                        Math.cos(-0.5 * Math.PI -
+                            2 *
+                                (1 / this._config.items.length) *
+                                index *
+                                Math.PI)).toFixed(4) + "%"};
                 top:${(50 +
-                35 *
-                    Math.sin(-0.5 * Math.PI -
-                        2 * (1 / this._config.items.length) * index * Math.PI)).toFixed(4) + "%"};"
-              ></ha-icon>
-            `;
+                    35 *
+                        Math.sin(-0.5 * Math.PI -
+                            2 *
+                                (1 / this._config.items.length) *
+                                index *
+                                Math.PI)).toFixed(4) + "%"};"
+                  ></ha-icon>
+                `;
         })}
         </div>
-        <ha-icon
-          class="menu-button"
-          .icon="${this._config.icon}"
-          .title="${this._config.name}"
-          @click="${this._toggleMenu}"
-        ></ha-icon>
+        ${this._config.entity_picture
+            ? html `
+              <hui-image
+                class="menu-button"
+                .hass="${this.hass}"
+                .image="${this._config.entity_picture}"
+                .title="${this._config.name}"
+                @click="${this._toggleMenu}"
+              ></hui-image>
+            `
+            : html `
+              <ha-icon
+                class="menu-button"
+                .icon="${this._config.icon}"
+                .title="${this._config.name}"
+                @click="${this._toggleMenu}"
+              ></ha-icon>
+            `}
       </nav>
     `;
     }
@@ -2579,7 +2622,8 @@ let RadialMenu = class RadialMenu extends LitElement {
         transform: scale(1);
       }
 
-      .circle ha-icon {
+      .circle ha-icon,
+      .circle hui-image {
         text-decoration: none;
         display: block;
         height: 40px;
@@ -2589,15 +2633,29 @@ let RadialMenu = class RadialMenu extends LitElement {
         margin-top: -20px;
         position: absolute;
         text-align: center;
+        border-radius: 50%;
+      }
+
+      .circle hui-image {
+        padding: 10px;
       }
 
       .circle ha-icon:hover {
         color: var(--accent-color);
       }
 
-      ha-icon {
+      .circle hui-image:hover {
+        background-color: var(--secondary-background-color);
+      }
+
+      ha-icon,
+      hui-image {
         cursor: pointer;
         color: var(--primary-color);
+      }
+
+      ha-icon {
+        cursor: pointer;
       }
 
       .menu-button {
@@ -2612,7 +2670,6 @@ let RadialMenu = class RadialMenu extends LitElement {
         width: 40px;
         line-height: 40px;
         padding: 10px;
-        background: var(--paper-card-background-color);
       }
 
       .menu-button:hover {
