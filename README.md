@@ -1,3 +1,5 @@
+![Lovelace GIF](https://github.com/michaeldvinci/Home-AssistantConfig/blob/master/images/Lovelace.gif?raw=true)
+
 ![Lovelace UI 1](https://github.com/michaeldvinci/Home-AssistantConfig/blob/master/images/01_Lovelace.png?raw=true)
 
 ![Lovelace UI 2](https://github.com/michaeldvinci/Home-AssistantConfig/blob/master/images/02_Data.png?raw=true)
