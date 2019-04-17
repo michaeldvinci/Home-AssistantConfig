@@ -90,3 +90,4 @@ camera: !include camera.yaml
 recorder:
   purge_keep_days: 1
   purge_interval: 1
+  
