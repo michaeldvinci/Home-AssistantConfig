@@ -45,3 +45,7 @@ light.far_corner_2:
 light.hall_2:
   templates:
     rgb_color: "if (state === 'off') return [68, 115, 158];"
+    
+sensor.litter_box:
+  templates:
+    icon_color: "if (state === 'Open') return [211, 47, 47];"

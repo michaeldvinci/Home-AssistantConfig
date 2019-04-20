@@ -120,14 +120,11 @@ views:
                   left: 90%
                   top: 89%
                 type: state-icon
-              - entity: sensor.litter_box_2
-                state_image:
-                  closed: /local/clean_closed.png
-                  open: /local/clean_open.png
+              - entity: sensor.litter_box
                 style:
-                  left: 89.5%
+                  left: 90.1%
                   top: 84%
-                type: image
+                type: state-icon
               - entity: light.far_corner_2
                 style:
                   left: 90%

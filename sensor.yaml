@@ -79,3 +79,21 @@
         {% else %}
           inactive
         {% endif %}
+- platform: template
+  sensors:
+    litter_box:
+      value_template: >-
+        {% if states.binary_sensor.litter_box_2_contact_2.state == 'on' %}
+          Open
+        {% elif states.binary_sensor.litter_box_2_contact_2.state == 'off' %}
+          Closed
+        {% else %}
+          Failed
+        {% endif %}
+      icon_template: >-
+        {% if states.binary_sensor.litter_box_2_contact_2.state == 'on' %}
+          mdi:delete
+        {% elif states.binary_sensor.litter_box_2_contact_2.state == 'off' %}
+          mdi:cat
+        {% endif %}
+      
