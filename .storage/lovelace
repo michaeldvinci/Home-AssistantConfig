@@ -462,7 +462,7 @@
                                             "type": "icon"
                                         },
                                         {
-                                            "entity": "media_player.michael_s_fire_tv",
+                                            "entity": "media_player.fire_stick_4k",
                                             "icon": "mdi:amazon",
                                             "style": {
                                                 "color": "#44739e",

@@ -1,24 +1,4 @@
-- platform: yamaha
-  host: !secret yamaha_address
-  source_ignore:
-    - AV1
-    - AV2
-    - AV3
-    - AV4
-    - AV5
-    - AV6
-    - Pandora
-    - Rhapsody
-    - SiriusXM
-    - Spotify
-    - Tuner
-    - USB
-    - V-AUX
-  source_names:
-    HDMI1: "Apple TV"
-    HDMI2: "Playstation 4"
-    HDMI3: "Wii U"
-    HDMI4: "Cable"
-    HDMI5: "Switch"
-    AUDIO1: ""
-    AUDIO2: ""
+- platform: androidtv
+  name: Fire Stick 4K
+  host: 192.168.50.23
+  adb_server_ip: 127.0.0.1

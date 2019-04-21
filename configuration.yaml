@@ -9,6 +9,10 @@ homeassistant:
 
 frontend:
   themes: !include themes.yaml
+  extra_html_url:
+    - /local/custom_ui/state-card-custom-ui.html
+  extra_html_url_es5:
+    - /local/custom_ui/state-card-custom-ui-es5.html
 
 config:
 
@@ -86,6 +90,7 @@ sensor: !include sensor.yaml
 switch: !include switch.yaml
 remote: !include remote.yaml
 camera: !include camera.yaml
+media_player: !include media_player.yaml
 
 recorder:
   purge_keep_days: 1
