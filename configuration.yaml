@@ -1,7 +1,7 @@
 homeassistant:
   name: Home
-  latitude: !secret lat
-  longitude: !secret long
+  latitude: !secret home_lat
+  longitude: !secret home_long
   elevation: 0
   unit_system: imperial
   time_zone: America/New_York
@@ -83,14 +83,15 @@ http:
   ssl_key: /ssl/privkey.pem
   base_url: https://michaeldvinci.duckdns.org
 
-group: !include groups.yaml
 automation: !include automations.yaml
+camera: !include camera.yaml
+group: !include groups.yaml
+media_player: !include media_player.yaml
+remote: !include remote.yaml
 script: !include scripts.yaml
 sensor: !include sensor.yaml
 switch: !include switch.yaml
-remote: !include remote.yaml
-camera: !include camera.yaml
-media_player: !include media_player.yaml
+zone: !include zone.yaml
 
 recorder:
   purge_keep_days: 1
