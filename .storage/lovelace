@@ -718,7 +718,19 @@
                                         },
                                         {
                                             "entity": "sensor.disk_free"
-                                        },
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "title": "Disk Info",
+                                    "type": "entities"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entities": [
                                         {
                                             "entity": "sensor.memory_use"
                                         },
@@ -729,8 +741,23 @@
                                             "entity": "sensor.processor_use"
                                         },
                                         {
-                                            "entity": "sensor.last_boot"
+                                            "entity": "sensor.cpu_temperature"
                                         },
+                                        {
+                                            "entity": "sensor.last_boot"
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "title": "System Info",
+                                    "type": "entities"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entities": [
                                         {
                                             "entity": "sensor.network_in_eth0"
                                         },
@@ -750,7 +777,8 @@
                                             "entity": "sensor.load_15m"
                                         }
                                     ],
-                                    "name": "System Health",
+                                    "show_header_toggle": false,
+                                    "title": "Network Info",
                                     "type": "entities"
                                 }
                             ],
@@ -770,6 +798,7 @@
                                             "entity": "sensor.pi_hole_dns_queries_today"
                                         }
                                     ],
+                                    "show_header_toggle": false,
                                     "title": "Pi-Hole",
                                     "type": "entities"
                                 }
@@ -785,7 +814,7 @@
                     "cards": [
                         {
                             "clock_date": true,
-                            "clock_format": 12,
+                            "clock_format": "12",
                             "main_config": true,
                             "menu": "show",
                             "notifications": "clock",

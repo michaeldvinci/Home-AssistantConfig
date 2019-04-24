@@ -487,17 +487,31 @@ views:
               - entity: sensor.disk_use_percent
               - entity: sensor.disk_use
               - entity: sensor.disk_free
+            title: Disk Info
+            show_header_toggle: false
+            type: entities
+        type: vertical-stack
+      - cards:
+          - entities:
               - entity: sensor.memory_use
               - entity: sensor.memory_free
               - entity: sensor.processor_use
+              - entity: sensor.cpu_temperature
               - entity: sensor.last_boot
+            title: System Info
+            show_header_toggle: false
+            type: entities
+        type: vertical-stack
+      - cards:
+          - entities:
               - entity: sensor.network_in_eth0
               - entity: sensor.network_out_eth0
               - entity: sensor.ipv4_address_eth0
               - entity: sensor.load_1m
               - entity: sensor.load_5m
               - entity: sensor.load_15m
-            name: System Health
+            title: Network Info
+            show_header_toggle: false
             type: entities
         type: vertical-stack
       - cards:
@@ -506,6 +520,7 @@ views:
               - entity: sensor.pi_hole_ads_percentage_blocked_today
               - entity: sensor.pi_hole_dns_queries_today
             title: Pi-Hole
+            show_header_toggle: false
             type: entities
         type: vertical-stack
     icon: 'mdi:raspberry-pi'
@@ -513,7 +528,7 @@ views:
   - badges: []
     cards:
       - clock_date: true
-        clock_format: 12
+        clock_format: '12'
         main_config: true
         menu: show
         notifications: clock
