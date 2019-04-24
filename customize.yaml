@@ -49,3 +49,12 @@ light.hall_2:
 sensor.litter_box:
   templates:
     icon_color: "if (state === 'Open') return [211, 47, 47];"
+    
+sensor.pi_hole_ads_blocked_today:
+  friendly_name: Ads Blocked
+
+sensor.pi_hole_ads_percentage_blocked_today:
+  friendly_name: Percentage Blocked
+
+sensor.pi_hole_dns_queries_today:
+  friendly_name: DNS Queries

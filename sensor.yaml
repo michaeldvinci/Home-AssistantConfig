@@ -1,9 +1,7 @@
 ### Network ###
 - platform: pi_hole
-  ssl: true
-  host: 192.168.50.12:4865
+  host: localhost:4865
   location: ""
-  verify_ssl: false
   monitored_conditions:
     - ads_blocked_today
     - ads_percentage_today

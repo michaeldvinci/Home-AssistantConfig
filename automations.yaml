@@ -35,4 +35,4 @@
     - service: notify.ios_mikes_iphone_xs
       data:
         title: 'HA Server'
-        message: 'Warning - HA Server CPU Temp is {{states.sensor.cpu_temperature.state}}c'
+        message: 'Warning - HA Server CPU Temp is {{states.sensor.cpu_temperature.state}}f'
