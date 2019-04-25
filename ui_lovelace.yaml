@@ -342,6 +342,10 @@ views:
                       hide_tabs: '0'
                       options: hide
                       menu: hide
+                  - conditions:
+                      user_agent: OS X
+                    config:
+                      hide_tabs: '1'
             image: /local/floorplan_grey2.png
             panel: true
             type: picture-elements
@@ -476,6 +480,40 @@ views:
               hide_tabs: '0'
               options: hide
               menu: hide
+          - conditions:
+              user_agent: OS X
+            config:
+              hide_tabs: '1'
+          - conditions: {}
+            config: {}
+      - type: picture-glance
+        image: /local/Mobile/Living_room_2.png
+        title: ''
+        entities:
+          - light.corner_2
+          - group.all_lights
+    icon: 'mdi:cellphone-iphone'
+    title: Mobile
+  - cards:
+      - clock_date: true
+        clock_format: '12'
+        main_config: true
+        menu: show
+        notifications: clock
+        options: show
+        type: 'custom:compact-custom-header'
+        voice: show
+        exceptions:
+          - conditions:
+              user_agent: Mobile
+            config:
+              hide_tabs: '0'
+              options: hide
+              menu: hide
+          - conditions:
+              user_agent: OS X
+            config:
+              hide_tabs: '1'
           - conditions: {}
             config: {}
       - cards:
@@ -505,6 +543,10 @@ views:
               hide_tabs: '0'
               options: hide
               menu: hide
+          - conditions:
+              user_agent: OS X
+            config:
+              hide_tabs: '1'
       - cards:
           - entities:
               - entity: sensor.disk_use_percent
@@ -565,7 +607,10 @@ views:
               hide_tabs: '0'
               options: hide
               menu: hide
-              main_config: true
+          - conditions:
+              user_agent: OS X
+            config:
+              hide_tabs: '1'
       - cards:
           - entity: climate.honeywell_home_thermostat
             type: thermostat
@@ -631,6 +676,10 @@ views:
               hide_tabs: '0'
               options: hide
               menu: hide
+          - conditions:
+              user_agent: OS X
+            config:
+              hide_tabs: '1'
       - cards:
           - entities:
               - sensor.bathroom_motion_all
@@ -663,6 +712,10 @@ views:
               hide_tabs: '0'
               options: hide
               menu: hide
+          - conditions:
+              user_agent: OS X
+            config:
+              hide_tabs: '1'
       - entities:
           - sensor.fridge_temperature_measurement
           - sensor.freezer_temperature_measurement
@@ -690,6 +743,10 @@ views:
               hide_tabs: '0'
               options: hide
               menu: hide
+          - conditions:
+              user_agent: OS X
+            config:
+              hide_tabs: '1'
       - cards:
           - entities:
               - sensor.bedroom_motion_all

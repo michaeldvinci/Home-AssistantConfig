@@ -495,6 +495,14 @@
                                                         "menu": "hide",
                                                         "options": "hide"
                                                     }
+                                                },
+                                                {
+                                                    "conditions": {
+                                                        "user_agent": "OS X"
+                                                    },
+                                                    "config": {
+                                                        "hide_tabs": "1"
+                                                    }
                                                 }
                                             ],
                                             "menu": "show",
@@ -688,6 +696,63 @@
                                     }
                                 },
                                 {
+                                    "conditions": {
+                                        "user_agent": "OS X"
+                                    },
+                                    "config": {
+                                        "hide_tabs": "1"
+                                    }
+                                },
+                                {
+                                    "conditions": {},
+                                    "config": {}
+                                }
+                            ],
+                            "main_config": true,
+                            "menu": "show",
+                            "notifications": "clock",
+                            "options": "show",
+                            "type": "custom:compact-custom-header",
+                            "voice": "show"
+                        },
+                        {
+                            "entities": [
+                                "light.corner_2",
+                                "group.all_lights"
+                            ],
+                            "image": "/local/Mobile/Living_room_2.png",
+                            "title": "",
+                            "type": "picture-glance"
+                        }
+                    ],
+                    "icon": "mdi:cellphone-iphone",
+                    "title": "Mobile"
+                },
+                {
+                    "cards": [
+                        {
+                            "clock_date": true,
+                            "clock_format": "12",
+                            "exceptions": [
+                                {
+                                    "conditions": {
+                                        "user_agent": "Mobile"
+                                    },
+                                    "config": {
+                                        "hide_tabs": "0",
+                                        "menu": "hide",
+                                        "options": "hide"
+                                    }
+                                },
+                                {
+                                    "conditions": {
+                                        "user_agent": "OS X"
+                                    },
+                                    "config": {
+                                        "hide_tabs": "1"
+                                    }
+                                },
+                                {
                                     "conditions": {},
                                     "config": {}
                                 }
@@ -736,6 +801,14 @@
                                         "hide_tabs": "0",
                                         "menu": "hide",
                                         "options": "hide"
+                                    }
+                                },
+                                {
+                                    "conditions": {
+                                        "user_agent": "OS X"
+                                    },
+                                    "config": {
+                                        "hide_tabs": "1"
                                     }
                                 }
                             ],
@@ -862,9 +935,16 @@
                                     },
                                     "config": {
                                         "hide_tabs": "0",
-                                        "main_config": true,
                                         "menu": "hide",
                                         "options": "hide"
+                                    }
+                                },
+                                {
+                                    "conditions": {
+                                        "user_agent": "OS X"
+                                    },
+                                    "config": {
+                                        "hide_tabs": "1"
                                     }
                                 }
                             ],
@@ -972,6 +1052,14 @@
                                         "menu": "hide",
                                         "options": "hide"
                                     }
+                                },
+                                {
+                                    "conditions": {
+                                        "user_agent": "OS X"
+                                    },
+                                    "config": {
+                                        "hide_tabs": "1"
+                                    }
                                 }
                             ],
                             "main_config": true,
@@ -1022,6 +1110,14 @@
                                         "menu": "hide",
                                         "options": "hide"
                                     }
+                                },
+                                {
+                                    "conditions": {
+                                        "user_agent": "OS X"
+                                    },
+                                    "config": {
+                                        "hide_tabs": "1"
+                                    }
                                 }
                             ],
                             "main_config": true,
@@ -1061,6 +1157,14 @@
                                         "hide_tabs": "0",
                                         "menu": "hide",
                                         "options": "hide"
+                                    }
+                                },
+                                {
+                                    "conditions": {
+                                        "user_agent": "OS X"
+                                    },
+                                    "config": {
+                                        "hide_tabs": "1"
                                     }
                                 }
                             ],
