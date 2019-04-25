@@ -502,13 +502,13 @@ views:
         entities:
           - sensor.bathroom_motion_temperature_measurement	
           - sensor.bathroom_motion_all
+          - group.bathroom_lights
       - type: picture-glance
         image: /local/Mobile/Kitchen.jpg
         title: ''
         entities:
           - sensor.freezer_temperature_measurement
-          - binary_sensor.fridge_contact
-          - binary_sensor.freezer_contact
+          - sensor.whole_fridge
       - type: picture-glance
         image: /local/Mobile/Bedroom.jpg
         title: ''

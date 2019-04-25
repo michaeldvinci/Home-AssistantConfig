@@ -94,6 +94,27 @@
         {% elif states.binary_sensor.litter_box_2_contact_2.state == 'off' %}
           mdi:cat
         {% endif %}
+    whole_fridge:
+      value_template: >-
+        {% if states.binary_sensor.fridge_contact.state == 'on' and states.binary_sensor.freezer_contact.state == 'off' %}
+          Fridge Open
+        {% elif states.binary_sensor.fridge_contact.state == 'off' and states.binary_sensor.freezer_contact.state == 'on' %}
+          Freezer Open
+        {% elif states.binary_sensor.fridge_contact.state == 'off' and states.binary_sensor.freezer_contact.state == 'off' %}
+          Closed
+        {% elif states.binary_sensor.fridge_contact.state == 'on' and states.binary_sensor.freezer_contact.state == 'on' %}
+          Open
+        {% endif %}
+      icon_template: >-
+        {% if states.binary_sensor.fridge_contact.state == 'on' and states.binary_sensor.freezer_contact.state == 'off' %}
+          mdi:fridge-bottom
+        {% elif states.binary_sensor.fridge_contact.state == 'off' and states.binary_sensor.freezer_contact.state == 'on' %}
+          mdi:fridge-top
+        {% elif states.binary_sensor.fridge_contact.state == 'off' and states.binary_sensor.freezer_contact.state == 'off' %}
+          mdi:fridge
+        {% elif states.binary_sensor.fridge_contact.state == 'on' and states.binary_sensor.freezer_contact.state == 'on' %}
+          mdi:fridge-outline
+        {% endif %}
 - platform: command_line
   name: CPU Temperature
   command: "cat /sys/class/thermal/thermal_zone0/temp"
