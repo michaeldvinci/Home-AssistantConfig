@@ -491,7 +491,9 @@
                                                         "user-agent": "Mobile"
                                                     },
                                                     "config": {
-                                                        "hide_tabs": "0"
+                                                        "hide_tabs": "0",
+                                                        "menu": "hide",
+                                                        "options": "hide"
                                                     }
                                                 }
                                             ],
@@ -680,7 +682,9 @@
                                         "user_agent": "Mobile"
                                     },
                                     "config": {
-                                        "hide_tabs": "0"
+                                        "hide_tabs": "0",
+                                        "menu": "hide",
+                                        "options": "hide"
                                     }
                                 },
                                 {
@@ -729,7 +733,9 @@
                                         "user_agent": "Mobile"
                                     },
                                     "config": {
-                                        "hide_tabs": "0"
+                                        "hide_tabs": "0",
+                                        "menu": "hide",
+                                        "options": "hide"
                                     }
                                 }
                             ],
@@ -856,7 +862,9 @@
                                     },
                                     "config": {
                                         "hide_tabs": "0",
-                                        "main_config": true
+                                        "main_config": true,
+                                        "menu": "hide",
+                                        "options": "hide"
                                     }
                                 }
                             ],
@@ -960,7 +968,9 @@
                                         "user_agent": "Mobile"
                                     },
                                     "config": {
-                                        "hide_tabs": "0"
+                                        "hide_tabs": "0",
+                                        "menu": "hide",
+                                        "options": "hide"
                                     }
                                 }
                             ],
@@ -1008,7 +1018,9 @@
                                         "user_agent": "Mobile"
                                     },
                                     "config": {
-                                        "hide_tabs": "0"
+                                        "hide_tabs": "0",
+                                        "menu": "hide",
+                                        "options": "hide"
                                     }
                                 }
                             ],
@@ -1046,7 +1058,9 @@
                                         "user_agent": "Mobile"
                                     },
                                     "config": {
-                                        "hide_tabs": "0"
+                                        "hide_tabs": "0",
+                                        "menu": "hide",
+                                        "options": "hide"
                                     }
                                 }
                             ],

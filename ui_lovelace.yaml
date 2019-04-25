@@ -340,6 +340,8 @@ views:
                       user-agent: Mobile
                     config:
                       hide_tabs: '0'
+                      options: hide
+                      menu: hide
             image: /local/floorplan_grey2.png
             panel: true
             type: picture-elements
@@ -472,6 +474,8 @@ views:
               user_agent: Mobile
             config:
               hide_tabs: '0'
+              options: hide
+              menu: hide
           - conditions: {}
             config: {}
       - cards:
@@ -499,6 +503,8 @@ views:
               user_agent: Mobile
             config:
               hide_tabs: '0'
+              options: hide
+              menu: hide
       - cards:
           - entities:
               - entity: sensor.disk_use_percent
@@ -557,6 +563,8 @@ views:
               user_agent: Mobile
             config:
               hide_tabs: '0'
+              options: hide
+              menu: hide
               main_config: true
       - cards:
           - entity: climate.honeywell_home_thermostat
@@ -621,6 +629,8 @@ views:
               user_agent: Mobile
             config:
               hide_tabs: '0'
+              options: hide
+              menu: hide
       - cards:
           - entities:
               - sensor.bathroom_motion_all
@@ -651,6 +661,8 @@ views:
               user_agent: Mobile
             config:
               hide_tabs: '0'
+              options: hide
+              menu: hide
       - entities:
           - sensor.fridge_temperature_measurement
           - sensor.freezer_temperature_measurement
@@ -676,6 +688,8 @@ views:
               user_agent: Mobile
             config:
               hide_tabs: '0'
+              options: hide
+              menu: hide
       - cards:
           - entities:
               - sensor.bedroom_motion_all
