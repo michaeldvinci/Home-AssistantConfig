@@ -485,6 +485,16 @@
                                         {
                                             "clock_date": true,
                                             "clock_format": 12,
+                                            "exceptions": [
+                                                {
+                                                    "conditions": {
+                                                        "user-agent": "Mobile"
+                                                    },
+                                                    "config": {
+                                                        "hide_tabs": "0"
+                                                    }
+                                                }
+                                            ],
                                             "menu": "show",
                                             "notifications": "clock",
                                             "options": "show",
@@ -663,7 +673,21 @@
                     "cards": [
                         {
                             "clock_date": true,
-                            "clock_format": 12,
+                            "clock_format": "12",
+                            "exceptions": [
+                                {
+                                    "conditions": {
+                                        "user_agent": "Mobile"
+                                    },
+                                    "config": {
+                                        "hide_tabs": "0"
+                                    }
+                                },
+                                {
+                                    "conditions": {},
+                                    "config": {}
+                                }
+                            ],
                             "main_config": true,
                             "menu": "show",
                             "notifications": "clock",
@@ -699,6 +723,16 @@
                         {
                             "clock_date": true,
                             "clock_format": 12,
+                            "exceptions": [
+                                {
+                                    "conditions": {
+                                        "user_agent": "Mobile"
+                                    },
+                                    "config": {
+                                        "hide_tabs": "0"
+                                    }
+                                }
+                            ],
                             "main_config": true,
                             "menu": "show",
                             "notifications": "clock",
@@ -815,6 +849,17 @@
                         {
                             "clock_date": true,
                             "clock_format": "12",
+                            "exceptions": [
+                                {
+                                    "conditions": {
+                                        "user_agent": "Mobile"
+                                    },
+                                    "config": {
+                                        "hide_tabs": "0",
+                                        "main_config": true
+                                    }
+                                }
+                            ],
                             "main_config": true,
                             "menu": "show",
                             "notifications": "clock",
@@ -909,6 +954,16 @@
                         {
                             "clock_date": true,
                             "clock_format": 12,
+                            "exceptions": [
+                                {
+                                    "conditions": {
+                                        "user_agent": "Mobile"
+                                    },
+                                    "config": {
+                                        "hide_tabs": "0"
+                                    }
+                                }
+                            ],
                             "main_config": true,
                             "menu": "show",
                             "notifications": "clock",
@@ -947,6 +1002,16 @@
                         {
                             "clock_date": true,
                             "clock_format": 12,
+                            "exceptions": [
+                                {
+                                    "conditions": {
+                                        "user_agent": "Mobile"
+                                    },
+                                    "config": {
+                                        "hide_tabs": "0"
+                                    }
+                                }
+                            ],
                             "main_config": true,
                             "menu": "show",
                             "notifications": "clock",
@@ -975,6 +1040,16 @@
                         {
                             "clock_date": true,
                             "clock_format": 12,
+                            "exceptions": [
+                                {
+                                    "conditions": {
+                                        "user_agent": "Mobile"
+                                    },
+                                    "config": {
+                                        "hide_tabs": "0"
+                                    }
+                                }
+                            ],
                             "main_config": true,
                             "menu": "show",
                             "notifications": "clock",

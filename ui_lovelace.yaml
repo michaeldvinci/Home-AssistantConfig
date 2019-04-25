@@ -335,6 +335,11 @@ views:
                 options: show
                 type: 'custom:compact-custom-header'
                 voice: show
+                exceptions:
+                  - conditions:
+                      user-agent: Mobile
+                    config:
+                      hide_tabs: '0'
             image: /local/floorplan_grey2.png
             panel: true
             type: picture-elements
@@ -455,13 +460,20 @@ views:
     title: Floorplan
   - cards:
       - clock_date: true
-        clock_format: 12
+        clock_format: '12'
         main_config: true
         menu: show
         notifications: clock
         options: show
         type: 'custom:compact-custom-header'
         voice: show
+        exceptions:
+          - conditions:
+              user_agent: Mobile
+            config:
+              hide_tabs: '0'
+          - conditions: {}
+            config: {}
       - cards:
           - type: 'custom:tracker-card'
         type: vertical-stack
@@ -482,13 +494,18 @@ views:
         options: show
         type: 'custom:compact-custom-header'
         voice: show
+        exceptions:
+          - conditions:
+              user_agent: Mobile
+            config:
+              hide_tabs: '0'
       - cards:
           - entities:
               - entity: sensor.disk_use_percent
               - entity: sensor.disk_use
               - entity: sensor.disk_free
-            title: Disk Info
             show_header_toggle: false
+            title: Disk Info
             type: entities
         type: vertical-stack
       - cards:
@@ -498,8 +515,8 @@ views:
               - entity: sensor.processor_use
               - entity: sensor.cpu_temperature
               - entity: sensor.last_boot
-            title: System Info
             show_header_toggle: false
+            title: System Info
             type: entities
         type: vertical-stack
       - cards:
@@ -510,8 +527,8 @@ views:
               - entity: sensor.load_1m
               - entity: sensor.load_5m
               - entity: sensor.load_15m
-            title: Network Info
             show_header_toggle: false
+            title: Network Info
             type: entities
         type: vertical-stack
       - cards:
@@ -519,8 +536,8 @@ views:
               - entity: sensor.pi_hole_ads_blocked_today
               - entity: sensor.pi_hole_ads_percentage_blocked_today
               - entity: sensor.pi_hole_dns_queries_today
-            title: Pi-Hole
             show_header_toggle: false
+            title: Pi-Hole
             type: entities
         type: vertical-stack
     icon: 'mdi:raspberry-pi'
@@ -535,6 +552,12 @@ views:
         options: show
         type: 'custom:compact-custom-header'
         voice: show
+        exceptions:
+          - conditions:
+              user_agent: Mobile
+            config:
+              hide_tabs: '0'
+              main_config: true
       - cards:
           - entity: climate.honeywell_home_thermostat
             type: thermostat
@@ -593,6 +616,11 @@ views:
         options: show
         type: 'custom:compact-custom-header'
         voice: show
+        exceptions:
+          - conditions:
+              user_agent: Mobile
+            config:
+              hide_tabs: '0'
       - cards:
           - entities:
               - sensor.bathroom_motion_all
@@ -618,6 +646,11 @@ views:
         options: show
         type: 'custom:compact-custom-header'
         voice: show
+        exceptions:
+          - conditions:
+              user_agent: Mobile
+            config:
+              hide_tabs: '0'
       - entities:
           - sensor.fridge_temperature_measurement
           - sensor.freezer_temperature_measurement
@@ -638,6 +671,11 @@ views:
         options: show
         type: 'custom:compact-custom-header'
         voice: show
+        exceptions:
+          - conditions:
+              user_agent: Mobile
+            config:
+              hide_tabs: '0'
       - cards:
           - entities:
               - sensor.bedroom_motion_all
