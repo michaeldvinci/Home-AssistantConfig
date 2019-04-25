@@ -480,18 +480,42 @@ views:
               hide_tabs: '0'
               options: hide
               menu: hide
-          - conditions:
-              user_agent: OS X
-            config:
-              hide_tabs: '1'
           - conditions: {}
             config: {}
       - type: picture-glance
-        image: /local/Mobile/Living_room_2.png
+        image: /local/Mobile/Entrance.jpg
         title: ''
         entities:
-          - light.corner_2
+          - lock.august_smart_lock_pro
+          - light.entrance_2
+          - camera.rtsp_1
+      - type: picture-glance
+        image: /local/Mobile/Living_Room.jpg
+        title: ''
+        entities:
+          - climate.honeywell_home_thermostat
+          - sensor.living_motion_all
           - group.all_lights
+      - type: picture-glance
+        image: /local/Mobile/Bathroom.jpg
+        title: ''
+        entities:
+          - sensor.bathroom_motion_temperature_measurement	
+          - sensor.bathroom_motion_all
+      - type: picture-glance
+        image: /local/Mobile/Kitchen.jpg
+        title: ''
+        entities:
+          - sensor.freezer_temperature_measurement
+          - binary_sensor.fridge_contact
+          - binary_sensor.freezer_contact
+      - type: picture-glance
+        image: /local/Mobile/Bedroom.jpg
+        title: ''
+        entities:
+          - sensor.bedroom_temperature_sensor_temperature_measurement
+          - sensor.bedroom_motion_all
+          - light.corner_2
     icon: 'mdi:cellphone-iphone'
     title: Mobile
   - cards:
