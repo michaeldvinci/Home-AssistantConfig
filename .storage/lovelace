@@ -280,8 +280,8 @@
                                         {
                                             "entity": "binary_sensor.fridge_contact",
                                             "state_image": {
-                                                "off": "/local/fridge_closed2.png",
-                                                "on": "/local/fridge_open2.png"
+                                                "off": "/local/Lovelace/fridge_closed2.png",
+                                                "on": "/local/Lovelace/fridge_open2.png"
                                             },
                                             "style": {
                                                 "left": "24%",
@@ -292,8 +292,8 @@
                                         {
                                             "entity": "binary_sensor.freezer_contact",
                                             "state_image": {
-                                                "off": "/local/freezer_closed2.png",
-                                                "on": "/local/freezer_open2.png"
+                                                "off": "/local/Lovelace/freezer_closed2.png",
+                                                "on": "/local/Lovelace/freezer_open2.png"
                                             },
                                             "style": {
                                                 "left": "24%",
@@ -512,7 +512,7 @@
                                             "voice": "show"
                                         }
                                     ],
-                                    "image": "/local/floorplan_grey2.png",
+                                    "image": "/local/Lovelace/floorplan_grey2.png",
                                     "panel": true,
                                     "type": "picture-elements"
                                 }
