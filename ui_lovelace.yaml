@@ -346,6 +346,10 @@ views:
                       user_agent: OS X
                     config:
                       hide_tabs: '1'
+                  - conditions:
+                      user_agent: Windows
+                    config:
+                      hide_tabs: '1'
             image: /local/Lovelace/floorplan_grey2.png
             panel: true
             type: picture-elements
@@ -540,6 +544,10 @@ views:
               user_agent: OS X
             config:
               hide_tabs: '1'
+          - conditions:
+              user_agent: Windows
+            config:
+              hide_tabs: '1'
           - conditions: {}
             config: {}
       - cards:
@@ -571,6 +579,10 @@ views:
               menu: hide
           - conditions:
               user_agent: OS X
+            config:
+              hide_tabs: '1'
+          - conditions:
+              user_agent: Windows
             config:
               hide_tabs: '1'
       - cards:
@@ -635,6 +647,10 @@ views:
               menu: hide
           - conditions:
               user_agent: OS X
+            config:
+              hide_tabs: '1'
+          - conditions:
+              user_agent: Windows
             config:
               hide_tabs: '1'
       - cards:
@@ -706,6 +722,10 @@ views:
               user_agent: OS X
             config:
               hide_tabs: '1'
+          - conditions:
+              user_agent: Windows
+            config:
+              hide_tabs: '1'
       - cards:
           - entities:
               - sensor.bathroom_motion_all
@@ -742,6 +762,10 @@ views:
               user_agent: OS X
             config:
               hide_tabs: '1'
+          - conditions:
+              user_agent: Windows
+            config:
+              hide_tabs: '1'
       - entities:
           - sensor.fridge_temperature_measurement
           - sensor.freezer_temperature_measurement
@@ -771,6 +795,10 @@ views:
               menu: hide
           - conditions:
               user_agent: OS X
+            config:
+              hide_tabs: '1'
+          - conditions:
+              user_agent: Windows
             config:
               hide_tabs: '1'
       - cards:
