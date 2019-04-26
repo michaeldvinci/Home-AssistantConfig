@@ -2,7 +2,7 @@
 
 ![Lovelace Phone 1](/images/Phone_01.png)
 
-![Lovelace Phone 2](/images/Phone_02.png){:height="50%" width="50%"}
+<img src="/images/Phone_02.png" width="45%" height="45%" />
 
 ![Lovelace UI 1](/images/01_Lovelace.png)
 
