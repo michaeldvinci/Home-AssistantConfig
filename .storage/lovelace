@@ -714,17 +714,18 @@
                                 "camera.rtsp_1"
                             ],
                             "image": "/local/Mobile/Entrance.jpg",
-                            "title": "",
+                            "title": "Entrance",
                             "type": "picture-glance"
                         },
                         {
                             "entities": [
                                 "climate.honeywell_home_thermostat",
                                 "sensor.living_motion_all",
+                                "remote.harmony_hub_living_room",
                                 "group.all_lights"
                             ],
                             "image": "/local/Mobile/Living_Room.jpg",
-                            "title": "",
+                            "title": "Living Room",
                             "type": "picture-glance"
                         },
                         {
@@ -734,7 +735,7 @@
                                 "group.bathroom_lights"
                             ],
                             "image": "/local/Mobile/Bathroom.jpg",
-                            "title": "",
+                            "title": "Bathroom",
                             "type": "picture-glance"
                         },
                         {
@@ -743,17 +744,18 @@
                                 "sensor.whole_fridge"
                             ],
                             "image": "/local/Mobile/Kitchen.jpg",
-                            "title": "",
+                            "title": "Kitchen",
                             "type": "picture-glance"
                         },
                         {
                             "entities": [
                                 "sensor.bedroom_temperature_sensor_temperature_measurement",
                                 "sensor.bedroom_motion_all",
+                                "remote.harmony_hub_bedroom",
                                 "light.corner_2"
                             ],
                             "image": "/local/Mobile/Bedroom.jpg",
-                            "title": "",
+                            "title": "Bedroom",
                             "type": "picture-glance"
                         }
                     ],

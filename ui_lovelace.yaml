@@ -484,37 +484,39 @@ views:
             config: {}
       - type: picture-glance
         image: /local/Mobile/Entrance.jpg
-        title: ''
+        title: Entrance
         entities:
           - lock.august_smart_lock_pro
           - light.entrance_2
           - camera.rtsp_1
       - type: picture-glance
         image: /local/Mobile/Living_Room.jpg
-        title: ''
+        title: Living Room
         entities:
           - climate.honeywell_home_thermostat
           - sensor.living_motion_all
+          - remote.harmony_hub_living_room
           - group.all_lights
       - type: picture-glance
         image: /local/Mobile/Bathroom.jpg
-        title: ''
+        title: Bathroom
         entities:
-          - sensor.bathroom_motion_temperature_measurement	
+          - sensor.bathroom_motion_temperature_measurement
           - sensor.bathroom_motion_all
           - group.bathroom_lights
       - type: picture-glance
         image: /local/Mobile/Kitchen.jpg
-        title: ''
+        title: Kitchen
         entities:
           - sensor.freezer_temperature_measurement
           - sensor.whole_fridge
       - type: picture-glance
         image: /local/Mobile/Bedroom.jpg
-        title: ''
+        title: Bedroom
         entities:
           - sensor.bedroom_temperature_sensor_temperature_measurement
           - sensor.bedroom_motion_all
+          - remote.harmony_hub_bedroom
           - light.corner_2
     icon: 'mdi:cellphone-iphone'
     title: Mobile
