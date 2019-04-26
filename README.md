@@ -1,8 +1,6 @@
 ![Lovelace GIF](/images/Lovelace.gif)
 
-<img src="/images/Phone_01.png" width="45%" height="45%" />
-
-<img src="/images/Phone_02.png" width="45%" height="45%" />
+<img src="/images/Phone_01.png" width="45%" height="45%" /><img src="/images/Phone_02.png" width="45%" height="45%" />
 
 ![Lovelace UI 1](/images/01_Lovelace.png)
 
