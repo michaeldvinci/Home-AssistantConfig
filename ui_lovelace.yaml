@@ -313,7 +313,7 @@ views:
                   left: 73%
                   top: 47%
                 type: icon
-              - entity: media_player.fire_stick_4k
+              - entity: media_player.michael_s_fire_tv
                 icon: 'mdi:amazon'
                 style:
                   color: '#44739e'
@@ -428,10 +428,16 @@ views:
         title: Living Room Echo Dot
       media_player.michael_s_fire_tv:
         card:
-          artwork: cover
-          entity: media_player.michael_s_fire_tv
-          icon: 'mdi:amazon'
-          type: 'custom:mini-media-player'
+          cards:
+            - artwork: cover
+              entity: media_player.michael_s_fire_tv
+              icon: 'mdi:amazon'
+              type: 'custom:mini-media-player'
+            - artwork: cover
+              entity: media_player.kodi_firetv
+              icon: 'mdi:kodi'
+              type: 'custom:mini-media-player'
+          type: vertical-stack
         title: Bedroom Fire TV 4K
       media_player.playstation_4:
         card:

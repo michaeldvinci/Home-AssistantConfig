@@ -8,3 +8,9 @@
   host: 192.168.50.11
   username: !secret kodi_user
   password: !secret kodi_pass
+  
+- platform: kodi
+  name: kodi_firetv
+  host: 192.168.50.23
+  username: !secret kodi_user
+  password: !secret kodi_pass
