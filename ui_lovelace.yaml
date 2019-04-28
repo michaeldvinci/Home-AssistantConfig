@@ -31,6 +31,7 @@ views:
               - calendar.gwu
               - calendar.gym_time
               - calendar.http_followshows_com_ical_9oejn9ol
+              - calendar.killshot_burgundy
               - calendar.michaeldvinci_gmail_com
               - calendar.miro
               - calendar.people
@@ -330,18 +331,13 @@ views:
                 type: icon
               - clock_date: true
                 clock_format: 12
-                menu: show
-                notifications: clock
-                options: show
-                type: 'custom:compact-custom-header'
-                voice: show
                 exceptions:
                   - conditions:
                       user-agent: Mobile
                     config:
                       hide_tabs: '0'
-                      options: hide
                       menu: hide
+                      options: hide
                   - conditions:
                       user_agent: OS X
                     config:
@@ -350,6 +346,11 @@ views:
                       user_agent: Windows
                     config:
                       hide_tabs: '1'
+                menu: show
+                notifications: clock
+                options: show
+                type: 'custom:compact-custom-header'
+                voice: show
             image: /local/Lovelace/floorplan_grey2.png
             panel: true
             type: picture-elements
@@ -393,10 +394,16 @@ views:
         title: AmpliFi Router
       media_player.apartment:
         card:
-          artwork: cover
-          entity: media_player.apartment
-          icon: 'mdi:apple'
-          type: 'custom:mini-media-player'
+          cards:
+            - artwork: cover
+              entity: media_player.apartment
+              icon: 'mdi:apple'
+              type: 'custom:mini-media-player'
+            - artwork: cover
+              entity: media_player.kodi_appletv
+              icon: 'mdi:kodi'
+              type: 'custom:mini-media-player'
+          type: vertical-stack
         title: Apple TV 4K
       media_player.echo_dot_bathroom:
         card:
@@ -471,75 +478,69 @@ views:
   - cards:
       - clock_date: true
         clock_format: '12'
+        exceptions:
+          - conditions:
+              user_agent: Mobile
+            config:
+              hide_tabs: '0'
+              menu: hide
+              options: hide
+          - conditions: {}
+            config: {}
         main_config: true
         menu: show
         notifications: clock
         options: show
         type: 'custom:compact-custom-header'
         voice: show
-        exceptions:
-          - conditions:
-              user_agent: Mobile
-            config:
-              hide_tabs: '0'
-              options: hide
-              menu: hide
-          - conditions: {}
-            config: {}
-      - type: picture-glance
-        image: /local/Mobile/Entrance.jpg
-        title: Entrance
-        entities:
+      - entities:
           - lock.august_smart_lock_pro
           - light.entrance_2
           - camera.rtsp_1
-      - type: picture-glance
-        image: /local/Mobile/Living_Room.jpg
-        title: Living Room
-        entities:
+        image: /local/Mobile/Entrance.jpg
+        title: Entrance
+        type: picture-glance
+      - entities:
           - climate.honeywell_home_thermostat
           - sensor.living_motion_all
           - remote.harmony_hub_living_room
           - group.all_lights
-      - type: picture-glance
-        image: /local/Mobile/Bathroom.jpg
-        title: Bathroom
-        entities:
+        image: /local/Mobile/Living_Room.jpg
+        title: Living Room
+        type: picture-glance
+      - entities:
           - sensor.bathroom_motion_temperature_measurement
           - sensor.bathroom_motion_all
           - group.bathroom_lights
-      - type: picture-glance
-        image: /local/Mobile/Kitchen.jpg
-        title: Kitchen
-        entities:
+        image: /local/Mobile/Bathroom.jpg
+        title: Bathroom
+        type: picture-glance
+      - entities:
           - sensor.freezer_temperature_measurement
           - sensor.whole_fridge
-      - type: picture-glance
-        image: /local/Mobile/Bedroom.jpg
-        title: Bedroom
-        entities:
+        image: /local/Mobile/Kitchen.jpg
+        title: Kitchen
+        type: picture-glance
+      - entities:
           - sensor.bedroom_temperature_sensor_temperature_measurement
           - sensor.bedroom_motion_all
           - remote.harmony_hub_bedroom
           - light.corner_2
+        image: /local/Mobile/Bedroom.jpg
+        title: Bedroom
+        type: picture-glance
     icon: 'mdi:cellphone-iphone'
     title: Mobile
   - cards:
       - clock_date: true
         clock_format: '12'
-        main_config: true
-        menu: show
-        notifications: clock
-        options: show
-        type: 'custom:compact-custom-header'
-        voice: show
         exceptions:
           - conditions:
               user_agent: Mobile
             config:
               hide_tabs: '0'
-              options: hide
               menu: hide
+              options: hide
           - conditions:
               user_agent: OS X
             config:
@@ -550,6 +551,12 @@ views:
               hide_tabs: '1'
           - conditions: {}
             config: {}
+        main_config: true
+        menu: show
+        notifications: clock
+        options: show
+        type: 'custom:compact-custom-header'
+        voice: show
       - cards:
           - type: 'custom:tracker-card'
         type: vertical-stack
@@ -564,19 +571,13 @@ views:
   - cards:
       - clock_date: true
         clock_format: 12
-        main_config: true
-        menu: show
-        notifications: clock
-        options: show
-        type: 'custom:compact-custom-header'
-        voice: show
         exceptions:
           - conditions:
               user_agent: Mobile
             config:
               hide_tabs: '0'
-              options: hide
               menu: hide
+              options: hide
           - conditions:
               user_agent: OS X
             config:
@@ -585,6 +586,12 @@ views:
               user_agent: Windows
             config:
               hide_tabs: '1'
+        main_config: true
+        menu: show
+        notifications: clock
+        options: show
+        type: 'custom:compact-custom-header'
+        voice: show
       - cards:
           - entities:
               - entity: sensor.disk_use_percent
@@ -632,19 +639,13 @@ views:
     cards:
       - clock_date: true
         clock_format: '12'
-        main_config: true
-        menu: show
-        notifications: clock
-        options: show
-        type: 'custom:compact-custom-header'
-        voice: show
         exceptions:
           - conditions:
               user_agent: Mobile
             config:
               hide_tabs: '0'
-              options: hide
               menu: hide
+              options: hide
           - conditions:
               user_agent: OS X
             config:
@@ -653,6 +654,12 @@ views:
               user_agent: Windows
             config:
               hide_tabs: '1'
+        main_config: true
+        menu: show
+        notifications: clock
+        options: show
+        type: 'custom:compact-custom-header'
+        voice: show
       - cards:
           - entity: climate.honeywell_home_thermostat
             type: thermostat
@@ -705,19 +712,13 @@ views:
     cards:
       - clock_date: true
         clock_format: 12
-        main_config: true
-        menu: show
-        notifications: clock
-        options: show
-        type: 'custom:compact-custom-header'
-        voice: show
         exceptions:
           - conditions:
               user_agent: Mobile
             config:
               hide_tabs: '0'
-              options: hide
               menu: hide
+              options: hide
           - conditions:
               user_agent: OS X
             config:
@@ -726,6 +727,12 @@ views:
               user_agent: Windows
             config:
               hide_tabs: '1'
+        main_config: true
+        menu: show
+        notifications: clock
+        options: show
+        type: 'custom:compact-custom-header'
+        voice: show
       - cards:
           - entities:
               - sensor.bathroom_motion_all
@@ -745,19 +752,13 @@ views:
     cards:
       - clock_date: true
         clock_format: 12
-        main_config: true
-        menu: show
-        notifications: clock
-        options: show
-        type: 'custom:compact-custom-header'
-        voice: show
         exceptions:
           - conditions:
               user_agent: Mobile
             config:
               hide_tabs: '0'
-              options: hide
               menu: hide
+              options: hide
           - conditions:
               user_agent: OS X
             config:
@@ -766,6 +767,12 @@ views:
               user_agent: Windows
             config:
               hide_tabs: '1'
+        main_config: true
+        menu: show
+        notifications: clock
+        options: show
+        type: 'custom:compact-custom-header'
+        voice: show
       - entities:
           - sensor.fridge_temperature_measurement
           - sensor.freezer_temperature_measurement
@@ -780,19 +787,13 @@ views:
     cards:
       - clock_date: true
         clock_format: 12
-        main_config: true
-        menu: show
-        notifications: clock
-        options: show
-        type: 'custom:compact-custom-header'
-        voice: show
         exceptions:
           - conditions:
               user_agent: Mobile
             config:
               hide_tabs: '0'
-              options: hide
               menu: hide
+              options: hide
           - conditions:
               user_agent: OS X
             config:
@@ -801,6 +802,12 @@ views:
               user_agent: Windows
             config:
               hide_tabs: '1'
+        main_config: true
+        menu: show
+        notifications: clock
+        options: show
+        type: 'custom:compact-custom-header'
+        voice: show
       - cards:
           - entities:
               - sensor.bedroom_motion_all
