@@ -60,22 +60,10 @@ panel_iframe:
     title: "IDE"
     icon: mdi:code-braces
     url: https://michaeldvinci.duckdns.org:8321
-  logger:
-    title: "Logger"
-    icon: mdi:card-text-outline
-    url: https://michaeldvinci.duckdns.org:4277
-  nodered:
-    title: "Node-Red"
-    icon: mdi:sitemap
-    url: https://michaeldvinci.duckdns.org:1880
   pihole:
     title: "Pi-hole"
     icon: mdi:block-helper
     url: https://michaeldvinci.duckdns.org:4865
-  portainer:
-    title: "Portainer"
-    icon: mdi:docker
-    url: https://michaeldvinci.duckdns.org:9000
 
 http:
   ip_ban_enabled: False
