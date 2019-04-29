@@ -43,7 +43,7 @@ bathroom_lights:
   entities:
     - light.bathroom_1
     - light.bathroom_2
-    - light.bathroom_2
+    - light.bathroom_3
 
 bathroom_motion:
   name: Bathroom Motion Sensor
