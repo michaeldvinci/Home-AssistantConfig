@@ -60,7 +60,6 @@
                                         "calendar.gwu",
                                         "calendar.gym_time",
                                         "calendar.http_followshows_com_ical_9oejn9ol",
-                                        "calendar.killshot_burgundy",
                                         "calendar.michaeldvinci_gmail_com",
                                         "calendar.miro",
                                         "calendar.people",
@@ -425,7 +424,7 @@
                                             "type": "state-icon"
                                         },
                                         {
-                                            "entity": "light.bed_left_2",
+                                            "entity": "light.bedroom_top",
                                             "style": {
                                                 "color": "#44739e",
                                                 "left": "77%",
