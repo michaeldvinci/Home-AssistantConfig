@@ -104,7 +104,7 @@ pi_hole:
     - sensor.pi_hole_dns_queries_today
     
 system_monitor:
-  name: Syste Monitor
+  name: System Monitor
   entities:
     - sensor.disk_use_percent
     - sensor.disk_use
