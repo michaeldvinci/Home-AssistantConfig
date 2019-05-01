@@ -1,0 +1,3 @@
+- platform: tile
+  username: !secret tile_user
+  password: !secret tile_pass
