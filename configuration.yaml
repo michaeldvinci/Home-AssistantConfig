@@ -16,6 +16,8 @@ frontend:
   
 config:
 
+mobile_app:
+
 discovery:
   ignore:
     - philips_hue

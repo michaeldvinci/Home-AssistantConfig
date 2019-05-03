@@ -6,7 +6,7 @@
       entity_id: sensor.disk_use
       above: 12
     action:
-    - service: notify.ios_mikes_iphone_xs
+    - service: nnotify.mobile_app_mikes_iphone_xs
       data:
         title: 'HA Server'
         message: 'Warning - HA Server Disk Use is {{states.sensor.disk_use.state}}GB'
@@ -19,7 +19,7 @@
       entity_id: sensor.processor_use
       above: 85
     action:
-    - service: notify.ios_mikes_iphone_xs
+    - service: notify.mobile_app_mikes_iphone_xs
       data:
         title: 'HA Server'
         message: 'Warning - HA Server Processor {{states.sensor.processor_use.state}}%'
@@ -32,7 +32,7 @@
       entity_id: sensor.cpu_temperature
       above: 185
     action:
-    - service: notify.ios_mikes_iphone_xs
+    - service: notify.mobile_app_mikes_iphone_xs
       data:
         title: 'HA Server'
         message: 'Warning - HA Server CPU Temp is {{states.sensor.cpu_temperature.state}}f'
