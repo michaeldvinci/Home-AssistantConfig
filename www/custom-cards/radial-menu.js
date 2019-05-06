@@ -2369,314 +2369,7 @@ LitElement.finalized = true;
  */
 LitElement.render = render$1;
 
-// Polymer legacy event helpers used courtesy of the Polymer project.
-//
-// Copyright (c) 2017 The Polymer Authors. All rights reserved.
-//
-// Redistribution and use in source and binary forms, with or without
-// modification, are permitted provided that the following conditions are
-// met:
-//
-//    * Redistributions of source code must retain the above copyright
-// notice, this list of conditions and the following disclaimer.
-//    * Redistributions in binary form must reproduce the above
-// copyright notice, this list of conditions and the following disclaimer
-// in the documentation and/or other materials provided with the
-// distribution.
-//    * Neither the name of Google Inc. nor the names of its
-// contributors may be used to endorse or promote products derived from
-// this software without specific prior written permission.
-//
-// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-// "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-// LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-// A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
-// OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-// SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-// LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-// THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-/**
- * Dispatches a custom event with an optional detail value.
- *
- * @param {string} type Name of event type.
- * @param {*=} detail Detail value containing event-specific
- *   payload.
- * @param {{ bubbles: (boolean|undefined),
- *           cancelable: (boolean|undefined),
- *           composed: (boolean|undefined) }=}
- *  options Object specifying options.  These may include:
- *  `bubbles` (boolean, defaults to `true`),
- *  `cancelable` (boolean, defaults to false), and
- *  `node` on which to fire the event (HTMLElement, defaults to `this`).
- * @return {Event} The new event that was fired.
- */
-const fireEvent = (node, type, detail, options) => {
-    options = options || {};
-    // @ts-ignore
-    detail = detail === null || detail === undefined ? {} : detail;
-    const event = new Event(type, {
-        bubbles: options.bubbles === undefined ? true : options.bubbles,
-        cancelable: Boolean(options.cancelable),
-        composed: options.composed === undefined ? true : options.composed,
-    });
-    event.detail = detail;
-    node.dispatchEvent(event);
-    return event;
-};
-
-const navigate = (_node, path, replace = false) => {
-    if (replace) {
-        history.replaceState(null, "", path);
-    }
-    else {
-        history.pushState(null, "", path);
-    }
-    fireEvent(window, "location-changed", {
-        replace
-    });
-};
-
-/** Constants to be used in the frontend. */
-/** States that we consider "off". */
-const STATES_OFF = ["closed", "locked", "off"];
-
-function computeDomain(entityId) {
-    return entityId.substr(0, entityId.indexOf("."));
-}
-
-const turnOnOffEntity = (hass, entityId, turnOn = true) => {
-    const stateDomain = computeDomain(entityId);
-    const serviceDomain = stateDomain === "group" ? "homeassistant" : stateDomain;
-    let service;
-    switch (stateDomain) {
-        case "lock":
-            service = turnOn ? "unlock" : "lock";
-            break;
-        case "cover":
-            service = turnOn ? "open_cover" : "close_cover";
-            break;
-        default:
-            service = turnOn ? "turn_on" : "turn_off";
-    }
-    return hass.callService(serviceDomain, service, { entity_id: entityId });
-};
-
-const toggleEntity = (hass, entityId) => {
-    const turnOn = STATES_OFF.includes(hass.states[entityId].state);
-    return turnOnOffEntity(hass, entityId, turnOn);
-};
-
-/**
- * Utility function that enables haptic feedback
- */
-const forwardHaptic = (el, hapticType) => {
-    fireEvent(el, "haptic", hapticType);
-};
-
-const handleClick = (node, hass, config, hold) => {
-    let actionConfig;
-    if (hold && config.hold_action) {
-        actionConfig = config.hold_action;
-    }
-    else if (!hold && config.tap_action) {
-        actionConfig = config.tap_action;
-    }
-    if (!actionConfig) {
-        actionConfig = {
-            action: "more-info",
-        };
-    }
-    switch (actionConfig.action) {
-        case "more-info":
-            if (config.entity) {
-                fireEvent(node, "hass-more-info", {
-                    entityId: config.entity,
-                });
-                if (actionConfig.haptic)
-                    forwardHaptic(node, actionConfig.haptic);
-            }
-            break;
-        case "navigate":
-            if (actionConfig.navigation_path) {
-                navigate(node, actionConfig.navigation_path);
-                if (actionConfig.haptic)
-                    forwardHaptic(node, actionConfig.haptic);
-            }
-            break;
-        case 'url':
-            actionConfig.url && window.open(actionConfig.url);
-            if (actionConfig.haptic)
-                forwardHaptic(node, actionConfig.haptic);
-            break;
-        case "toggle":
-            if (config.entity) {
-                toggleEntity(hass, config.entity);
-                if (actionConfig.haptic)
-                    forwardHaptic(node, actionConfig.haptic);
-            }
-            break;
-        case "call-service": {
-            if (!actionConfig.service) {
-                return;
-            }
-            const [domain, service] = actionConfig.service.split(".", 2);
-            hass.callService(domain, service, actionConfig.service_data);
-            if (actionConfig.haptic)
-                forwardHaptic(node, actionConfig.haptic);
-        }
-    }
-};
-
-// See https://github.com/home-assistant/home-assistant-polymer/pull/2457
-// on how to undo mwc -> paper migration
-// import "@material/mwc-ripple";
-const isTouch = "ontouchstart" in window ||
-    navigator.maxTouchPoints > 0 ||
-    navigator.msMaxTouchPoints > 0;
-class LongPress extends HTMLElement {
-    constructor() {
-        super();
-        this.holdTime = 500;
-        this.ripple = document.createElement("paper-ripple");
-        this.timer = undefined;
-        this.held = false;
-        this.cooldownStart = false;
-        this.cooldownEnd = false;
-    }
-    connectedCallback() {
-        Object.assign(this.style, {
-            borderRadius: "50%",
-            position: "absolute",
-            width: isTouch ? "100px" : "50px",
-            height: isTouch ? "100px" : "50px",
-            transform: "translate(-50%, -50%)",
-            pointerEvents: "none",
-        });
-        this.appendChild(this.ripple);
-        this.ripple.style.color = "#03a9f4"; // paper-ripple
-        this.ripple.style.color = "var(--primary-color)"; // paper-ripple
-        // this.ripple.primary = true;
-        [
-            "touchcancel",
-            "mouseout",
-            "mouseup",
-            "touchmove",
-            "mousewheel",
-            "wheel",
-            "scroll",
-        ].forEach((ev) => {
-            document.addEventListener(ev, () => {
-                clearTimeout(this.timer);
-                this.stopAnimation();
-                this.timer = undefined;
-            }, { passive: true });
-        });
-    }
-    bind(element) {
-        if (element.longPress) {
-            return;
-        }
-        element.longPress = true;
-        element.addEventListener("contextmenu", (ev) => {
-            const e = ev || window.event;
-            if (e.preventDefault) {
-                e.preventDefault();
-            }
-            if (e.stopPropagation) {
-                e.stopPropagation();
-            }
-            e.cancelBubble = true;
-            e.returnValue = false;
-            return false;
-        });
-        const clickStart = (ev) => {
-            if (this.cooldownStart) {
-                return;
-            }
-            this.held = false;
-            let x;
-            let y;
-            if (ev.touches) {
-                x = ev.touches[0].pageX;
-                y = ev.touches[0].pageY;
-            }
-            else {
-                x = ev.pageX;
-                y = ev.pageY;
-            }
-            this.timer = window.setTimeout(() => {
-                this.startAnimation(x, y);
-                this.held = true;
-            }, this.holdTime);
-            this.cooldownStart = true;
-            window.setTimeout(() => (this.cooldownStart = false), 100);
-        };
-        const clickEnd = (ev) => {
-            if (this.cooldownEnd ||
-                (["touchend", "touchcancel"].includes(ev.type) &&
-                    this.timer === undefined)) {
-                return;
-            }
-            clearTimeout(this.timer);
-            this.stopAnimation();
-            this.timer = undefined;
-            if (this.held) {
-                element.dispatchEvent(new Event("ha-hold"));
-            }
-            else {
-                element.dispatchEvent(new Event("ha-click"));
-            }
-            this.cooldownEnd = true;
-            window.setTimeout(() => (this.cooldownEnd = false), 100);
-        };
-        element.addEventListener("touchstart", clickStart, { passive: true });
-        element.addEventListener("touchend", clickEnd);
-        element.addEventListener("touchcancel", clickEnd);
-        element.addEventListener("mousedown", clickStart, { passive: true });
-        element.addEventListener("click", clickEnd);
-    }
-    startAnimation(x, y) {
-        Object.assign(this.style, {
-            left: `${x}px`,
-            top: `${y}px`,
-            display: null,
-        });
-        this.ripple.holdDown = true; // paper-ripple
-        this.ripple.simulatedRipple(); // paper-ripple
-        // this.ripple.disabled = false;
-        // this.ripple.active = true;
-        // this.ripple.unbounded = true;
-    }
-    stopAnimation() {
-        this.ripple.holdDown = false; // paper-ripple
-        // this.ripple.active = false;
-        // this.ripple.disabled = true;
-        this.style.display = "none";
-    }
-}
-customElements.define("long-press-button-card", LongPress);
-const getLongPress = () => {
-    const body = document.body;
-    if (body.querySelector("long-press-button-card")) {
-        return body.querySelector("long-press-button-card");
-    }
-    const longpress = document.createElement("long-press-button-card");
-    body.appendChild(longpress);
-    return longpress;
-};
-const longPressBind = (element) => {
-    const longpress = getLongPress();
-    if (!longpress) {
-        return;
-    }
-    longpress.bind(element);
-};
-const longPress = directive(() => (part) => {
-    longPressBind(part.committer.element);
-});
+var c=["closed","locked","off"],d=function(t,e,o,n){n=n||{},o=null==o?{}:o;var i=new Event(e,{bubbles:void 0===n.bubbles||n.bubbles,cancelable:Boolean(n.cancelable),composed:void 0===n.composed||n.composed});return i.detail=o,t.dispatchEvent(i),i},h=function(t,e,o){void 0===o&&(o=!1),o?history.replaceState(null,"",e):history.pushState(null,"",e),d(window,"location-changed",{replace:o});},m=function(t,e,o){void 0===o&&(o=!0);var n,i=function(t){return t.substr(0,t.indexOf("."))}(e),a="group"===i?"homeassistant":i;switch(i){case"lock":n=o?"unlock":"lock";break;case"cover":n=o?"open_cover":"close_cover";break;default:n=o?"turn_on":"turn_off";}return t.callService(a,n,{entity_id:e})},v=function(t,e){var o=c.includes(t.states[e].state);return m(t,e,o)},f=function(t,e){d(t,"haptic",e);},w=function(t,e,o,n){var i;switch(n&&o.hold_action?i=o.hold_action:!n&&o.tap_action&&(i=o.tap_action),i||(i={action:"more-info"}),i.action){case"more-info":o.entity&&(d(t,"hass-more-info",{entityId:o.entity}),i.haptic&&f(t,i.haptic));break;case"navigate":i.navigation_path&&(h(0,i.navigation_path),i.haptic&&f(t,i.haptic));break;case"url":i.url&&window.open(i.url),i.haptic&&f(t,i.haptic);break;case"toggle":o.entity&&(v(e,o.entity),i.haptic&&f(t,i.haptic));break;case"call-service":if(!i.service)return;var a=i.service.split(".",2);e.callService(a[0],a[1],i.service_data),i.haptic&&f(t,i.haptic);}},g="ontouchstart"in window||navigator.maxTouchPoints>0||navigator.msMaxTouchPoints>0,b=function(t){function e(){t.call(this),this.holdTime=500,this.ripple=document.createElement("paper-ripple"),this.timer=void 0,this.held=!1,this.cooldownStart=!1,this.cooldownEnd=!1;}return t&&(e.__proto__=t),(e.prototype=Object.create(t&&t.prototype)).constructor=e,e.prototype.connectedCallback=function(){var t=this;Object.assign(this.style,{borderRadius:"50%",position:"absolute",width:g?"100px":"50px",height:g?"100px":"50px",transform:"translate(-50%, -50%)",pointerEvents:"none"}),this.appendChild(this.ripple),this.ripple.style.color="#03a9f4",this.ripple.style.color="var(--primary-color)",["touchcancel","mouseout","mouseup","touchmove","mousewheel","wheel","scroll"].forEach(function(e){document.addEventListener(e,function(){clearTimeout(t.timer),t.stopAnimation(),t.timer=void 0;},{passive:!0});});},e.prototype.bind=function(t){var e=this;if(!t.longPress){t.longPress=!0,t.addEventListener("contextmenu",function(t){var e=t||window.event;return e.preventDefault&&e.preventDefault(),e.stopPropagation&&e.stopPropagation(),e.cancelBubble=!0,e.returnValue=!1,!1});var o=function(t){var o,n;e.cooldownStart||(e.held=!1,t.touches?(o=t.touches[0].pageX,n=t.touches[0].pageY):(o=t.pageX,n=t.pageY),e.timer=window.setTimeout(function(){e.startAnimation(o,n),e.held=!0;},e.holdTime),e.cooldownStart=!0,window.setTimeout(function(){return e.cooldownStart=!1},100));},n=function(o){e.cooldownEnd||["touchend","touchcancel"].includes(o.type)&&void 0===e.timer||(clearTimeout(e.timer),e.stopAnimation(),e.timer=void 0,t.dispatchEvent(e.held?new Event("ha-hold"):new Event("ha-click")),e.cooldownEnd=!0,window.setTimeout(function(){return e.cooldownEnd=!1},100));};t.addEventListener("touchstart",o,{passive:!0}),t.addEventListener("touchend",n),t.addEventListener("touchcancel",n),t.addEventListener("mousedown",o,{passive:!0}),t.addEventListener("click",n);}},e.prototype.startAnimation=function(t,e){Object.assign(this.style,{left:t+"px",top:e+"px",display:null}),this.ripple.holdDown=!0,this.ripple.simulatedRipple();},e.prototype.stopAnimation=function(){this.ripple.holdDown=!1,this.style.display="none";},e}(HTMLElement);customElements.get("long-press")||customElements.define("long-press",b);var _=function(t){var e=function(){var t=document.body;if(t.querySelector("long-press"))return t.querySelector("long-press");var e=document.createElement("long-press");return t.appendChild(e),e}();e&&e.bind(t);},y=directive(function(){return function(t){_(t.committer.element);}});
 
 let RadialMenu = class RadialMenu extends LitElement {
     setConfig(config) {
@@ -2705,7 +2398,7 @@ let RadialMenu = class RadialMenu extends LitElement {
                   <state-badge
                     @ha-click="${this._handleTap}"
                     @ha-hold="${this._handleHold}"
-                    .longpress="${longPress()}"
+                    .longpress="${y()}"
                     .config="${item}"
                     .stateObj="${{
                     attributes: {
@@ -2734,7 +2427,7 @@ let RadialMenu = class RadialMenu extends LitElement {
                   <ha-icon
                     @ha-click="${this._handleTap}"
                     @ha-hold="${this._handleHold}"
-                    .longpress="${longPress()}"
+                    .longpress="${y()}"
                     .config="${item}"
                     .icon="${item.icon}"
                     .title="${item.name}"
@@ -2763,7 +2456,7 @@ let RadialMenu = class RadialMenu extends LitElement {
                 class="menu-button"
                 @ha-click="${this._handleTap}"
                 @ha-hold="${this._handleHold}"
-                .longpress="${longPress()}"
+                .longpress="${y()}"
                 .config="${this._config}"
                 .stateObj="${{
                 attributes: {
@@ -2781,7 +2474,7 @@ let RadialMenu = class RadialMenu extends LitElement {
                 .config="${this._config}"
                 @ha-click="${this._handleTap}"
                 @ha-hold="${this._handleHold}"
-                .longpress="${longPress()}"
+                .longpress="${y()}"
               ></ha-icon>
             `}
       </nav>
@@ -2803,7 +2496,7 @@ let RadialMenu = class RadialMenu extends LitElement {
             this._toggleMenu();
         }
         else {
-            handleClick(this, this.hass, config, false);
+            w(this, this.hass, config, false);
             if (this._config.default_dismiss) {
                 this._toggleMenu();
             }
@@ -2817,7 +2510,7 @@ let RadialMenu = class RadialMenu extends LitElement {
             this._toggleMenu();
         }
         else {
-            handleClick(this, this.hass, config, true);
+            w(this, this.hass, config, true);
             if (this._config.default_dismiss) {
                 this._toggleMenu();
             }
