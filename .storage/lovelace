@@ -837,6 +837,76 @@
                             "voice": "show"
                         },
                         {
+                            "entities": [
+                                "calendar.bills",
+                                "calendar.events",
+                                "calendar.gwu",
+                                "calendar.gym_time",
+                                "calendar.http_followshows_com_ical_9oejn9ol",
+                                "calendar.michaeldvinci_gmail_com",
+                                "calendar.miro",
+                                "calendar.people",
+                                "calendar.potential_trips",
+                                "calendar.pre_order",
+                                "calendar.things_to_remember",
+                                "calendar.work_solers"
+                            ],
+                            "progressBar": true,
+                            "showMultiDay": true,
+                            "startFromToday": true,
+                            "timeFormat": "hh:mm a",
+                            "title": false,
+                            "type": "custom:calendar-card"
+                        }
+                    ],
+                    "icon": "mdi:calendar-multiselect",
+                    "title": "Calendar"
+                },
+                {
+                    "cards": [
+                        {
+                            "clock_date": true,
+                            "clock_format": "12",
+                            "exceptions": [
+                                {
+                                    "conditions": {
+                                        "user_agent": "Mobile"
+                                    },
+                                    "config": {
+                                        "hide_tabs": "0",
+                                        "menu": "hide",
+                                        "options": "hide"
+                                    }
+                                },
+                                {
+                                    "conditions": {
+                                        "user_agent": "OS X"
+                                    },
+                                    "config": {
+                                        "hide_tabs": "1"
+                                    }
+                                },
+                                {
+                                    "conditions": {
+                                        "user_agent": "Windows"
+                                    },
+                                    "config": {
+                                        "hide_tabs": "1"
+                                    }
+                                },
+                                {
+                                    "conditions": {},
+                                    "config": {}
+                                }
+                            ],
+                            "main_config": true,
+                            "menu": "show",
+                            "notifications": "clock",
+                            "options": "show",
+                            "type": "custom:compact-custom-header",
+                            "voice": "show"
+                        },
+                        {
                             "cards": [
                                 {
                                     "type": "custom:tracker-card"
