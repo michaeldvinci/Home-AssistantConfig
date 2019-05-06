@@ -332,7 +332,7 @@ views:
                 clock_format: 12
                 exceptions:
                   - conditions:
-                      user-agent: Mobile
+                      user_agent: Mobile
                     config:
                       hide_tabs: '0'
                       menu: hide
@@ -340,11 +340,11 @@ views:
                   - conditions:
                       user_agent: OS X
                     config:
-                      hide_tabs: '1'
+                      hide_tabs: '1,2'
                   - conditions:
                       user_agent: Windows
                     config:
-                      hide_tabs: '1'
+                      hide_tabs: '1,2'
                 menu: show
                 notifications: clock
                 options: show
@@ -490,8 +490,14 @@ views:
               hide_tabs: '0'
               menu: hide
               options: hide
-          - conditions: {}
-            config: {}
+          - conditions:
+              user_agent: OS X
+            config:
+              hide_tabs: '1,2'
+          - conditions:
+              user_agent: Windows
+            config:
+              hide_tabs: '1,2'
         main_config: true
         menu: show
         notifications: clock
@@ -549,13 +555,11 @@ views:
           - conditions:
               user_agent: OS X
             config:
-              hide_tabs: '1'
+              hide_tabs: '1,2'
           - conditions:
               user_agent: Windows
             config:
-              hide_tabs: '1'
-          - conditions: {}
-            config: {}
+              hide_tabs: '1,2'
         main_config: true
         menu: show
         notifications: clock
@@ -596,13 +600,11 @@ views:
           - conditions:
               user_agent: OS X
             config:
-              hide_tabs: '1'
+              hide_tabs: '1,2'
           - conditions:
               user_agent: Windows
             config:
-              hide_tabs: '1'
-          - conditions: {}
-            config: {}
+              hide_tabs: '1,2'
         main_config: true
         menu: show
         notifications: clock
@@ -633,11 +635,11 @@ views:
           - conditions:
               user_agent: OS X
             config:
-              hide_tabs: '1'
+              hide_tabs: '1,2'
           - conditions:
               user_agent: Windows
             config:
-              hide_tabs: '1'
+              hide_tabs: '1,2'
         main_config: true
         menu: show
         notifications: clock
@@ -701,11 +703,11 @@ views:
           - conditions:
               user_agent: OS X
             config:
-              hide_tabs: '1'
+              hide_tabs: '1,2'
           - conditions:
               user_agent: Windows
             config:
-              hide_tabs: '1'
+              hide_tabs: '1,2'
         main_config: true
         menu: show
         notifications: clock
@@ -774,11 +776,11 @@ views:
           - conditions:
               user_agent: OS X
             config:
-              hide_tabs: '1'
+              hide_tabs: '1,2'
           - conditions:
               user_agent: Windows
             config:
-              hide_tabs: '1'
+              hide_tabs: '1,2'
         main_config: true
         menu: show
         notifications: clock
@@ -814,11 +816,11 @@ views:
           - conditions:
               user_agent: OS X
             config:
-              hide_tabs: '1'
+              hide_tabs: '1,2'
           - conditions:
               user_agent: Windows
             config:
-              hide_tabs: '1'
+              hide_tabs: '1,2'
         main_config: true
         menu: show
         notifications: clock
@@ -849,11 +851,11 @@ views:
           - conditions:
               user_agent: OS X
             config:
-              hide_tabs: '1'
+              hide_tabs: '1,2'
           - conditions:
               user_agent: Windows
             config:
-              hide_tabs: '1'
+              hide_tabs: '1,2'
         main_config: true
         menu: show
         notifications: clock

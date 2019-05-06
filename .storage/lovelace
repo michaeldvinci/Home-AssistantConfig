@@ -488,7 +488,7 @@
                                             "exceptions": [
                                                 {
                                                     "conditions": {
-                                                        "user-agent": "Mobile"
+                                                        "user_agent": "Mobile"
                                                     },
                                                     "config": {
                                                         "hide_tabs": "0",
@@ -501,7 +501,7 @@
                                                         "user_agent": "OS X"
                                                     },
                                                     "config": {
-                                                        "hide_tabs": "1"
+                                                        "hide_tabs": "1,2"
                                                     }
                                                 },
                                                 {
@@ -509,7 +509,7 @@
                                                         "user_agent": "Windows"
                                                     },
                                                     "config": {
-                                                        "hide_tabs": "1"
+                                                        "hide_tabs": "1,2"
                                                     }
                                                 }
                                             ],
@@ -726,8 +726,20 @@
                                     }
                                 },
                                 {
-                                    "conditions": {},
-                                    "config": {}
+                                    "conditions": {
+                                        "user_agent": "OS X"
+                                    },
+                                    "config": {
+                                        "hide_tabs": "1,2"
+                                    }
+                                },
+                                {
+                                    "conditions": {
+                                        "user_agent": "Windows"
+                                    },
+                                    "config": {
+                                        "hide_tabs": "1,2"
+                                    }
                                 }
                             ],
                             "main_config": true,
@@ -813,7 +825,7 @@
                                         "user_agent": "OS X"
                                     },
                                     "config": {
-                                        "hide_tabs": "1"
+                                        "hide_tabs": "1,2"
                                     }
                                 },
                                 {
@@ -821,12 +833,8 @@
                                         "user_agent": "Windows"
                                     },
                                     "config": {
-                                        "hide_tabs": "1"
+                                        "hide_tabs": "1,2"
                                     }
-                                },
-                                {
-                                    "conditions": {},
-                                    "config": {}
                                 }
                             ],
                             "main_config": true,
@@ -883,7 +891,7 @@
                                         "user_agent": "OS X"
                                     },
                                     "config": {
-                                        "hide_tabs": "1"
+                                        "hide_tabs": "1,2"
                                     }
                                 },
                                 {
@@ -891,12 +899,8 @@
                                         "user_agent": "Windows"
                                     },
                                     "config": {
-                                        "hide_tabs": "1"
+                                        "hide_tabs": "1,2"
                                     }
-                                },
-                                {
-                                    "conditions": {},
-                                    "config": {}
                                 }
                             ],
                             "main_config": true,
@@ -950,7 +954,7 @@
                                         "user_agent": "OS X"
                                     },
                                     "config": {
-                                        "hide_tabs": "1"
+                                        "hide_tabs": "1,2"
                                     }
                                 },
                                 {
@@ -958,7 +962,7 @@
                                         "user_agent": "Windows"
                                     },
                                     "config": {
-                                        "hide_tabs": "1"
+                                        "hide_tabs": "1,2"
                                     }
                                 }
                             ],
@@ -1094,7 +1098,7 @@
                                         "user_agent": "OS X"
                                     },
                                     "config": {
-                                        "hide_tabs": "1"
+                                        "hide_tabs": "1,2"
                                     }
                                 },
                                 {
@@ -1102,7 +1106,7 @@
                                         "user_agent": "Windows"
                                     },
                                     "config": {
-                                        "hide_tabs": "1"
+                                        "hide_tabs": "1,2"
                                     }
                                 }
                             ],
@@ -1216,7 +1220,7 @@
                                         "user_agent": "OS X"
                                     },
                                     "config": {
-                                        "hide_tabs": "1"
+                                        "hide_tabs": "1,2"
                                     }
                                 },
                                 {
@@ -1224,7 +1228,7 @@
                                         "user_agent": "Windows"
                                     },
                                     "config": {
-                                        "hide_tabs": "1"
+                                        "hide_tabs": "1,2"
                                     }
                                 }
                             ],
@@ -1282,7 +1286,7 @@
                                         "user_agent": "OS X"
                                     },
                                     "config": {
-                                        "hide_tabs": "1"
+                                        "hide_tabs": "1,2"
                                     }
                                 },
                                 {
@@ -1290,7 +1294,7 @@
                                         "user_agent": "Windows"
                                     },
                                     "config": {
-                                        "hide_tabs": "1"
+                                        "hide_tabs": "1,2"
                                     }
                                 }
                             ],
@@ -1338,7 +1342,7 @@
                                         "user_agent": "OS X"
                                     },
                                     "config": {
-                                        "hide_tabs": "1"
+                                        "hide_tabs": "1,2"
                                     }
                                 },
                                 {
@@ -1346,7 +1350,7 @@
                                         "user_agent": "Windows"
                                     },
                                     "config": {
-                                        "hide_tabs": "1"
+                                        "hide_tabs": "1,2"
                                     }
                                 }
                             ],
