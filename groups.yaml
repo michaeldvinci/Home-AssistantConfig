@@ -10,6 +10,7 @@ default_view:
     - group.living_room_lights
     - group.late_lights
     - group.right_side_lights
+    
 bathroom:
   name: Bathroom
   view: yes
@@ -18,13 +19,7 @@ bathroom:
     - group.bathroom_multi
     - group.bathroom_motion
     - group.bathroom_lights
-kitchen:
-  name: Kitchen
-  view: yes
-  icon: mdi:food-fork-drink
-  entities:
-    - group.fridge
-
+    
 ### GROUPS ###
 amplifi:
   name: Ubiquiti Amplifi
@@ -57,44 +52,29 @@ bathroom_multi:
     - sensor.bathroom_multi_lume
     - sensor.bathroom_multi_motion
     - sensor.bathroom_multi_temp
-
-living_room_multi:
-  name: Living Room Multi Sensor
-  entities:
-    - sensor.living_room_multi_humid
-    - sensor.living_room_multi_lume
-    - sensor.living_room_multi_motion
-    - sensor.living_room_multi_temp
     
 living_room_lights:
   name: Living Room Lights
   entities:
-    - light.bar
-    - light.entrance
-    - light.dining
-    - light.far_corner
-    - light.corner
-    - light.hall
+    - light.bar_2
+    - light.entrance_2
+    - light.dining_2
+    - light.far_corner_2
+    - light.corner_2
+    - light.hall_2
 
 right_side_lights:
   name: Right Side Lights
   entities:
-    - light.far_corner
-    - light.corner
+    - light.far_corner_2
+    - light.corner_2
     
 late_lights:
   name: Late Lights
   entities:
-    - light.far_corner
-    - light.corner
-    - light.hall
-
-fridge:
-  name: Fridge
-  entities:
-    - sensor.fridge
-    - sensor.freezer
-    - sensor.freezer_temperature_sensor
+    - light.far_corner_2
+    - light.corner_2
+    - light.hall_2
 
 pi_hole:
   name: Pi-Hole

@@ -764,7 +764,7 @@
                                 "climate.honeywell_home_thermostat",
                                 "sensor.living_motion_all",
                                 "remote.harmony_hub_living_room",
-                                "group.all_lights"
+                                "group.living_room_lights"
                             ],
                             "image": "/local/Mobile/Living_Room.jpg",
                             "title": "Living Room",
