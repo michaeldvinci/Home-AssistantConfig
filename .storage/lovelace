@@ -1,6 +1,44 @@
 {
     "data": {
         "config": {
+            "cch": {
+                "clock_date": true,
+                "clock_format": 12,
+                "exceptions": [
+                    {
+                        "conditions": {
+                            "user_agent": "Mobile"
+                        },
+                        "config": {
+                            "hide_tabs": "0",
+                            "menu": "hide",
+                            "options": "hide"
+                        }
+                    },
+                    {
+                        "conditions": {
+                            "user_agent": "OS X"
+                        },
+                        "config": {
+                            "hide_tabs": "1,2"
+                        }
+                    },
+                    {
+                        "conditions": {
+                            "user_agent": "Windows"
+                        },
+                        "config": {
+                            "hide_tabs": "1,2"
+                        }
+                    }
+                ],
+                "menu": "show",
+                "notifications": "clock",
+                "options": "show",
+                "swipe": true,
+                "type": "custom:compact-custom-header",
+                "voice": "show"
+            },
             "resources": [
                 {
                     "type": "js",
@@ -481,43 +519,6 @@
                                                 "top": "47%"
                                             },
                                             "type": "icon"
-                                        },
-                                        {
-                                            "clock_date": true,
-                                            "clock_format": 12,
-                                            "exceptions": [
-                                                {
-                                                    "conditions": {
-                                                        "user_agent": "Mobile"
-                                                    },
-                                                    "config": {
-                                                        "hide_tabs": "0",
-                                                        "menu": "hide",
-                                                        "options": "hide"
-                                                    }
-                                                },
-                                                {
-                                                    "conditions": {
-                                                        "user_agent": "OS X"
-                                                    },
-                                                    "config": {
-                                                        "hide_tabs": "1,2"
-                                                    }
-                                                },
-                                                {
-                                                    "conditions": {
-                                                        "user_agent": "Windows"
-                                                    },
-                                                    "config": {
-                                                        "hide_tabs": "1,2"
-                                                    }
-                                                }
-                                            ],
-                                            "menu": "show",
-                                            "notifications": "clock",
-                                            "options": "show",
-                                            "type": "custom:compact-custom-header",
-                                            "voice": "show"
                                         }
                                     ],
                                     "image": "/local/Lovelace/floorplan_grey2.png",
@@ -712,44 +713,6 @@
                 {
                     "cards": [
                         {
-                            "clock_date": true,
-                            "clock_format": "12",
-                            "exceptions": [
-                                {
-                                    "conditions": {
-                                        "user_agent": "Mobile"
-                                    },
-                                    "config": {
-                                        "hide_tabs": "0",
-                                        "menu": "hide",
-                                        "options": "hide"
-                                    }
-                                },
-                                {
-                                    "conditions": {
-                                        "user_agent": "OS X"
-                                    },
-                                    "config": {
-                                        "hide_tabs": "1,2"
-                                    }
-                                },
-                                {
-                                    "conditions": {
-                                        "user_agent": "Windows"
-                                    },
-                                    "config": {
-                                        "hide_tabs": "1,2"
-                                    }
-                                }
-                            ],
-                            "main_config": true,
-                            "menu": "show",
-                            "notifications": "clock",
-                            "options": "show",
-                            "type": "custom:compact-custom-header",
-                            "voice": "show"
-                        },
-                        {
                             "entities": [
                                 "lock.august_smart_lock_pro",
                                 "light.entrance_2",
@@ -807,50 +770,13 @@
                 {
                     "cards": [
                         {
-                            "clock_date": true,
-                            "clock_format": "12",
-                            "exceptions": [
-                                {
-                                    "conditions": {
-                                        "user_agent": "Mobile"
-                                    },
-                                    "config": {
-                                        "hide_tabs": "0",
-                                        "menu": "hide",
-                                        "options": "hide"
-                                    }
-                                },
-                                {
-                                    "conditions": {
-                                        "user_agent": "OS X"
-                                    },
-                                    "config": {
-                                        "hide_tabs": "1,2"
-                                    }
-                                },
-                                {
-                                    "conditions": {
-                                        "user_agent": "Windows"
-                                    },
-                                    "config": {
-                                        "hide_tabs": "1,2"
-                                    }
-                                }
-                            ],
-                            "main_config": true,
-                            "menu": "show",
-                            "notifications": "clock",
-                            "options": "show",
-                            "type": "custom:compact-custom-header",
-                            "voice": "show"
-                        },
-                        {
                             "entities": [
                                 "calendar.bills",
                                 "calendar.events",
                                 "calendar.gwu",
                                 "calendar.gym_time",
                                 "calendar.http_followshows_com_ical_9oejn9ol",
+                                "calendar.killshot_black_like_my_soul",
                                 "calendar.michaeldvinci_gmail_com",
                                 "calendar.miro",
                                 "calendar.people",
@@ -872,44 +798,6 @@
                 },
                 {
                     "cards": [
-                        {
-                            "clock_date": true,
-                            "clock_format": "12",
-                            "exceptions": [
-                                {
-                                    "conditions": {
-                                        "user_agent": "Mobile"
-                                    },
-                                    "config": {
-                                        "hide_tabs": "0",
-                                        "menu": "hide",
-                                        "options": "hide"
-                                    }
-                                },
-                                {
-                                    "conditions": {
-                                        "user_agent": "OS X"
-                                    },
-                                    "config": {
-                                        "hide_tabs": "1,2"
-                                    }
-                                },
-                                {
-                                    "conditions": {
-                                        "user_agent": "Windows"
-                                    },
-                                    "config": {
-                                        "hide_tabs": "1,2"
-                                    }
-                                }
-                            ],
-                            "main_config": true,
-                            "menu": "show",
-                            "notifications": "clock",
-                            "options": "show",
-                            "type": "custom:compact-custom-header",
-                            "voice": "show"
-                        },
                         {
                             "cards": [
                                 {
@@ -935,44 +823,6 @@
                 },
                 {
                     "cards": [
-                        {
-                            "clock_date": true,
-                            "clock_format": 12,
-                            "exceptions": [
-                                {
-                                    "conditions": {
-                                        "user_agent": "Mobile"
-                                    },
-                                    "config": {
-                                        "hide_tabs": "0",
-                                        "menu": "hide",
-                                        "options": "hide"
-                                    }
-                                },
-                                {
-                                    "conditions": {
-                                        "user_agent": "OS X"
-                                    },
-                                    "config": {
-                                        "hide_tabs": "1,2"
-                                    }
-                                },
-                                {
-                                    "conditions": {
-                                        "user_agent": "Windows"
-                                    },
-                                    "config": {
-                                        "hide_tabs": "1,2"
-                                    }
-                                }
-                            ],
-                            "main_config": true,
-                            "menu": "show",
-                            "notifications": "clock",
-                            "options": "show",
-                            "type": "custom:compact-custom-header",
-                            "voice": "show"
-                        },
                         {
                             "cards": [
                                 {
@@ -1080,44 +930,6 @@
                     "badges": [],
                     "cards": [
                         {
-                            "clock_date": true,
-                            "clock_format": "12",
-                            "exceptions": [
-                                {
-                                    "conditions": {
-                                        "user_agent": "Mobile"
-                                    },
-                                    "config": {
-                                        "hide_tabs": "0",
-                                        "menu": "hide",
-                                        "options": "hide"
-                                    }
-                                },
-                                {
-                                    "conditions": {
-                                        "user_agent": "OS X"
-                                    },
-                                    "config": {
-                                        "hide_tabs": "1,2"
-                                    }
-                                },
-                                {
-                                    "conditions": {
-                                        "user_agent": "Windows"
-                                    },
-                                    "config": {
-                                        "hide_tabs": "1,2"
-                                    }
-                                }
-                            ],
-                            "main_config": true,
-                            "menu": "show",
-                            "notifications": "clock",
-                            "options": "show",
-                            "type": "custom:compact-custom-header",
-                            "voice": "show"
-                        },
-                        {
                             "cards": [
                                 {
                                     "entity": "climate.honeywell_home_thermostat",
@@ -1202,44 +1014,6 @@
                     "badges": [],
                     "cards": [
                         {
-                            "clock_date": true,
-                            "clock_format": 12,
-                            "exceptions": [
-                                {
-                                    "conditions": {
-                                        "user_agent": "Mobile"
-                                    },
-                                    "config": {
-                                        "hide_tabs": "0",
-                                        "menu": "hide",
-                                        "options": "hide"
-                                    }
-                                },
-                                {
-                                    "conditions": {
-                                        "user_agent": "OS X"
-                                    },
-                                    "config": {
-                                        "hide_tabs": "1,2"
-                                    }
-                                },
-                                {
-                                    "conditions": {
-                                        "user_agent": "Windows"
-                                    },
-                                    "config": {
-                                        "hide_tabs": "1,2"
-                                    }
-                                }
-                            ],
-                            "main_config": true,
-                            "menu": "show",
-                            "notifications": "clock",
-                            "options": "show",
-                            "type": "custom:compact-custom-header",
-                            "voice": "show"
-                        },
-                        {
                             "cards": [
                                 {
                                     "entities": [
@@ -1268,44 +1042,6 @@
                     "badges": [],
                     "cards": [
                         {
-                            "clock_date": true,
-                            "clock_format": 12,
-                            "exceptions": [
-                                {
-                                    "conditions": {
-                                        "user_agent": "Mobile"
-                                    },
-                                    "config": {
-                                        "hide_tabs": "0",
-                                        "menu": "hide",
-                                        "options": "hide"
-                                    }
-                                },
-                                {
-                                    "conditions": {
-                                        "user_agent": "OS X"
-                                    },
-                                    "config": {
-                                        "hide_tabs": "1,2"
-                                    }
-                                },
-                                {
-                                    "conditions": {
-                                        "user_agent": "Windows"
-                                    },
-                                    "config": {
-                                        "hide_tabs": "1,2"
-                                    }
-                                }
-                            ],
-                            "main_config": true,
-                            "menu": "show",
-                            "notifications": "clock",
-                            "options": "show",
-                            "type": "custom:compact-custom-header",
-                            "voice": "show"
-                        },
-                        {
                             "entities": [
                                 "sensor.fridge_temperature_measurement",
                                 "sensor.freezer_temperature_measurement",
@@ -1323,44 +1059,6 @@
                 {
                     "badges": [],
                     "cards": [
-                        {
-                            "clock_date": true,
-                            "clock_format": 12,
-                            "exceptions": [
-                                {
-                                    "conditions": {
-                                        "user_agent": "Mobile"
-                                    },
-                                    "config": {
-                                        "hide_tabs": "0",
-                                        "menu": "hide",
-                                        "options": "hide"
-                                    }
-                                },
-                                {
-                                    "conditions": {
-                                        "user_agent": "OS X"
-                                    },
-                                    "config": {
-                                        "hide_tabs": "1,2"
-                                    }
-                                },
-                                {
-                                    "conditions": {
-                                        "user_agent": "Windows"
-                                    },
-                                    "config": {
-                                        "hide_tabs": "1,2"
-                                    }
-                                }
-                            ],
-                            "main_config": true,
-                            "menu": "show",
-                            "notifications": "clock",
-                            "options": "show",
-                            "type": "custom:compact-custom-header",
-                            "voice": "show"
-                        },
                         {
                             "cards": [
                                 {

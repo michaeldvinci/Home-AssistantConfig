@@ -18,6 +18,8 @@ config:
 
 mobile_app:
 
+fastdotcom:
+
 discovery:
   ignore:
     - philips_hue
