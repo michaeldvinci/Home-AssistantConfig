@@ -1,3 +1,27 @@
+cch:
+  clock_date: true
+  clock_format: 12
+  exceptions:
+    - conditions:
+        user_agent: Mobile
+      config:
+        hide_tabs: '0'
+        menu: hide
+        options: hide
+    - conditions:
+        user_agent: OS X
+      config:
+        hide_tabs: '1,2'
+    - conditions:
+        user_agent: Windows
+      config:
+        hide_tabs: '1,2'
+  menu: show
+  notifications: clock
+  options: show
+  swipe: true
+  type: 'custom:compact-custom-header'
+  voice: show
 resources:
   - type: js
     url: /local/custom-cards/calendar-card.js?track=true
@@ -21,30 +45,6 @@ resources:
     url: /customcards/github/thomasloven/layout-card.js?track=true
   - type: js
     url: /customcards/github/thomasloven/popup-card.js?track=true
-cch:
-  clock_date: true
-  clock_format: 12
-  exceptions:
-    - conditions:
-        user_agent: Mobile
-      config:
-        hide_tabs: '0'
-        menu: hide
-        options: hide
-    - conditions:
-        user_agent: OS X
-      config:
-        hide_tabs: '1,2'
-    - conditions:
-        user_agent: Windows
-      config:
-        hide_tabs: '1,2'
-  menu: show
-  notifications: clock
-  swipe: true
-  options: show
-  type: 'custom:compact-custom-header'
-  voice: show
 title: Mike's Apartment
 views:
   - cards:
@@ -193,7 +193,7 @@ views:
                   left: 76.5%
                   top: 55%
                 type: icon
-              - entity: media_player.playstation_4
+              - entity: media_player.playstation_4_2
                 icon: 'mdi:playstation'
                 style:
                   color: '#44739e'
@@ -440,10 +440,10 @@ views:
               type: 'custom:mini-media-player'
           type: vertical-stack
         title: Bedroom Fire TV 4K
-      media_player.playstation_4:
+      media_player.playstation_4_2:
         card:
           artwork: cover
-          entity: media_player.playstation_4
+          entity: media_player.playstation_4_2
           type: 'custom:mini-media-player'
         title: PS4
       media_player.rx_v681:

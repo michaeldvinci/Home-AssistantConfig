@@ -294,7 +294,7 @@
                                             "type": "icon"
                                         },
                                         {
-                                            "entity": "media_player.playstation_4",
+                                            "entity": "media_player.playstation_4_2",
                                             "icon": "mdi:playstation",
                                             "style": {
                                                 "color": "#44739e",
@@ -647,10 +647,10 @@
                             },
                             "title": "Bedroom Fire TV 4K"
                         },
-                        "media_player.playstation_4": {
+                        "media_player.playstation_4_2": {
                             "card": {
                                 "artwork": "cover",
-                                "entity": "media_player.playstation_4",
+                                "entity": "media_player.playstation_4_2",
                                 "type": "custom:mini-media-player"
                             },
                             "title": "PS4"
