@@ -85,7 +85,7 @@
                     "url": "/customcards/github/thomasloven/popup-card.js?track=true"
                 }
             ],
-            "title": "Mike's Apartment",
+            "title": "",
             "views": [
                 {
                     "cards": [
@@ -870,6 +870,10 @@
                                 }
                             ],
                             "type": "vertical-stack"
+                        },
+                        {
+                            "entity": "sensor.hass_installed_version",
+                            "type": "sensor"
                         },
                         {
                             "cards": [

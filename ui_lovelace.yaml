@@ -45,7 +45,7 @@ resources:
     url: /customcards/github/thomasloven/layout-card.js?track=true
   - type: js
     url: /customcards/github/thomasloven/popup-card.js?track=true
-title: Mike's Apartment
+title: ''
 views:
   - cards:
       - cards:
@@ -577,6 +577,8 @@ views:
             title: System Info
             type: entities
         type: vertical-stack
+      - type: sensor
+        entity: sensor.hass_installed_version
       - cards:
           - entities:
               - entity: sensor.network_in_eth0
