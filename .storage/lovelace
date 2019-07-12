@@ -3,16 +3,18 @@
         "config": {
             "cch": {
                 "clock_date": true,
-                "clock_format": 12,
                 "exceptions": [
                     {
                         "conditions": {
                             "user_agent": "Mobile"
                         },
                         "config": {
+                            "clock_format": "12",
                             "hide_tabs": "0",
                             "menu": "hide",
-                            "options": "hide"
+                            "notifications": "clock",
+                            "options": "hide",
+                            "voice": "show"
                         }
                     },
                     {
@@ -20,7 +22,12 @@
                             "user_agent": "OS X"
                         },
                         "config": {
-                            "hide_tabs": "1,2"
+                            "clock_format": "12",
+                            "hide_tabs": "1,2",
+                            "menu": "show",
+                            "notifications": "clock",
+                            "options": "show",
+                            "voice": "show"
                         }
                     },
                     {
@@ -28,16 +35,19 @@
                             "user_agent": "Windows"
                         },
                         "config": {
-                            "hide_tabs": "1,2"
+                            "clock_format": "12",
+                            "hide_tabs": "1,2",
+                            "menu": "show",
+                            "notifications": "clock",
+                            "options": "show",
+                            "voice": "show"
                         }
                     }
                 ],
-                "menu": "show",
+                "hide_help": true,
                 "notifications": "clock",
-                "options": "show",
                 "swipe": true,
-                "type": "custom:compact-custom-header",
-                "voice": "show"
+                "type": "custom:compact-custom-header"
             },
             "resources": [
                 {
@@ -805,17 +815,6 @@
                                 }
                             ],
                             "type": "vertical-stack"
-                        },
-                        {
-                            "cards": [
-                                {
-                                    "camera_image": "camera.rtsp_1",
-                                    "entity": "camera.rtsp_1",
-                                    "name": "Front Door Cam",
-                                    "type": "picture-entity"
-                                }
-                            ],
-                            "type": "vertical-stack"
                         }
                     ],
                     "icon": "mdi:chart-donut",
@@ -823,6 +822,10 @@
                 },
                 {
                     "cards": [
+                        {
+                            "entity": "sensor.hass_installed_version",
+                            "type": "sensor"
+                        },
                         {
                             "cards": [
                                 {
@@ -872,10 +875,6 @@
                             "type": "vertical-stack"
                         },
                         {
-                            "entity": "sensor.hass_installed_version",
-                            "type": "sensor"
-                        },
-                        {
                             "cards": [
                                 {
                                     "entities": [
@@ -904,27 +903,6 @@
                                 }
                             ],
                             "type": "vertical-stack"
-                        },
-                        {
-                            "cards": [
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "sensor.pi_hole_ads_blocked_today"
-                                        },
-                                        {
-                                            "entity": "sensor.pi_hole_ads_percentage_blocked_today"
-                                        },
-                                        {
-                                            "entity": "sensor.pi_hole_dns_queries_today"
-                                        }
-                                    ],
-                                    "show_header_toggle": false,
-                                    "title": "Pi-Hole",
-                                    "type": "entities"
-                                }
-                            ],
-                            "type": "vertical-stack"
                         }
                     ],
                     "icon": "mdi:raspberry-pi",
@@ -944,7 +922,6 @@
                                         "lock.august_smart_lock_pro"
                                     ],
                                     "show_header_toggle": false,
-                                    "title": "August Smart Lock",
                                     "type": "entities"
                                 },
                                 {
@@ -959,6 +936,12 @@
                         },
                         {
                             "cards": [
+                                {
+                                    "artwork": "cover",
+                                    "entity": "media_player.kodi_appletv",
+                                    "icon": "mdi:audio-video",
+                                    "type": "custom:mini-media-player"
+                                },
                                 {
                                     "artwork": "cover",
                                     "entity": "media_player.rx_v681",
@@ -988,18 +971,15 @@
                         {
                             "cards": [
                                 {
-                                    "entities": [
-                                        "sensor.amplifi_router_bytes_received",
-                                        "sensor.amplifi_router_bytes_sent"
-                                    ],
-                                    "hours_to_show": 24,
-                                    "points_per_hour": 2,
-                                    "type": "custom:mini-graph-card"
+                                    "camera_image": "camera.rtsp_1",
+                                    "entity": "camera.rtsp_1",
+                                    "name": "Front Door Cam",
+                                    "type": "picture-entity"
                                 },
                                 {
                                     "entities": [
-                                        "sensor.amplifi_router_packets_received",
-                                        "sensor.amplifi_router_packets_sent"
+                                        "sensor.amplifi_router_bytes_received",
+                                        "sensor.amplifi_router_bytes_sent"
                                     ],
                                     "hours_to_show": 24,
                                     "points_per_hour": 2,
@@ -1024,7 +1004,6 @@
                                         "sensor.bathroom_motion_all"
                                     ],
                                     "show_header_toggle": false,
-                                    "title": "Bathroom Motion All",
                                     "type": "entities"
                                 },
                                 {

@@ -1,6 +1,5 @@
 cch:
   clock_date: true
-  clock_format: 12
   exceptions:
     - conditions:
         user_agent: Mobile
@@ -8,20 +7,31 @@ cch:
         hide_tabs: '0'
         menu: hide
         options: hide
+        voice: show
+        notifications: clock
+        clock_format: '12'
     - conditions:
         user_agent: OS X
       config:
         hide_tabs: '1,2'
+        menu: show
+        voice: show
+        options: show
+        notifications: clock
+        clock_format: '12'
     - conditions:
         user_agent: Windows
       config:
         hide_tabs: '1,2'
-  menu: show
+        menu: show
+        voice: show
+        options: show
+        notifications: clock
+        clock_format: '12'
   notifications: clock
-  options: show
   swipe: true
   type: 'custom:compact-custom-header'
-  voice: show
+  hide_help: true
 resources:
   - type: js
     url: /local/custom-cards/calendar-card.js?track=true
@@ -548,15 +558,11 @@ views:
       - cards:
           - type: 'custom:tracker-card'
         type: vertical-stack
-      - cards:
-          - camera_image: camera.rtsp_1
-            entity: camera.rtsp_1
-            name: Front Door Cam
-            type: picture-entity
-        type: vertical-stack
     icon: 'mdi:chart-donut'
     title: Other
   - cards:
+      - entity: sensor.hass_installed_version
+        type: sensor
       - cards:
           - entities:
               - entity: sensor.disk_use_percent
@@ -577,8 +583,6 @@ views:
             title: System Info
             type: entities
         type: vertical-stack
-      - type: sensor
-        entity: sensor.hass_installed_version
       - cards:
           - entities:
               - entity: sensor.network_in_eth0
@@ -591,15 +595,6 @@ views:
             title: Network Info
             type: entities
         type: vertical-stack
-      - cards:
-          - entities:
-              - entity: sensor.pi_hole_ads_blocked_today
-              - entity: sensor.pi_hole_ads_percentage_blocked_today
-              - entity: sensor.pi_hole_dns_queries_today
-            show_header_toggle: false
-            title: Pi-Hole
-            type: entities
-        type: vertical-stack
     icon: 'mdi:raspberry-pi'
     title: Other
   - badges: []
@@ -610,7 +605,6 @@ views:
           - entities:
               - lock.august_smart_lock_pro
             show_header_toggle: false
-            title: August Smart Lock
             type: entities
           - entities:
               - sensor.living_room_motion_temperature_measurement
@@ -618,6 +612,10 @@ views:
             type: entities
         type: vertical-stack
       - cards:
+          - artwork: cover
+            entity: media_player.kodi_appletv
+            icon: 'mdi:audio-video'
+            type: 'custom:mini-media-player'
           - artwork: cover
             entity: media_player.rx_v681
             icon: 'mdi:audio-video'
@@ -635,15 +633,13 @@ views:
             type: 'custom:mini-media-player'
         type: vertical-stack
       - cards:
+          - camera_image: camera.rtsp_1
+            entity: camera.rtsp_1
+            name: Front Door Cam
+            type: picture-entity
           - entities:
               - sensor.amplifi_router_bytes_received
               - sensor.amplifi_router_bytes_sent
-            hours_to_show: 24
-            points_per_hour: 2
-            type: 'custom:mini-graph-card'
-          - entities:
-              - sensor.amplifi_router_packets_received
-              - sensor.amplifi_router_packets_sent
             hours_to_show: 24
             points_per_hour: 2
             type: 'custom:mini-graph-card'
@@ -658,7 +654,6 @@ views:
           - entities:
               - sensor.bathroom_motion_all
             show_header_toggle: false
-            title: Bathroom Motion All
             type: entities
           - artwork: cover
             entity: media_player.echo_dot_bathroom
