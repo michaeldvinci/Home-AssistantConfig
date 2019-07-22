@@ -52,35 +52,11 @@
             "resources": [
                 {
                     "type": "js",
-                    "url": "/local/custom-cards/calendar-card.js?track=true"
-                },
-                {
-                    "type": "module",
-                    "url": "/local/custom-cards/mini-graph-card-bundle.js?v=0.3.2"
-                },
-                {
-                    "type": "module",
-                    "url": "/local/custom-cards/mini-media-player-bundle.js?v=1.0.3"
-                },
-                {
-                    "type": "js",
                     "url": "/local/custom-cards/plan-coordinates.js?v=2"
                 },
                 {
                     "type": "module",
-                    "url": "/local/custom-cards/radial-menu.js"
-                },
-                {
-                    "type": "module",
                     "url": "/customcards/github/custom-cards/tracker-card.js?track=true"
-                },
-                {
-                    "type": "module",
-                    "url": "/customcards/github/nervetattoo/simple-thermostat.js?track=true"
-                },
-                {
-                    "type": "module",
-                    "url": "/customcards/github/maykar/compact-custom-header.js?track=true"
                 },
                 {
                     "type": "js",
@@ -93,6 +69,30 @@
                 {
                     "type": "js",
                     "url": "/customcards/github/thomasloven/popup-card.js?track=true"
+                },
+                {
+                    "type": "js",
+                    "url": "/community_plugin/calendar-card/calendar-card.js"
+                },
+                {
+                    "type": "module",
+                    "url": "/community_plugin/radial-menu/radial-menu.js"
+                },
+                {
+                    "type": "module",
+                    "url": "/community_plugin/mini-media-player/mini-media-player.js"
+                },
+                {
+                    "type": "module",
+                    "url": "/community_plugin/mini-graph-card/mini-graph-card.js"
+                },
+                {
+                    "type": "module",
+                    "url": "/community_plugin/compact-custom-header/compact-custom-header.js"
+                },
+                {
+                    "type": "module",
+                    "url": "/community_plugin/simple-thermostat/simple-thermostat.js"
                 }
             ],
             "title": "",
@@ -811,7 +811,13 @@
                         {
                             "cards": [
                                 {
-                                    "type": "custom:tracker-card"
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.hacs"
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "type": "entities"
                                 }
                             ],
                             "type": "vertical-stack"

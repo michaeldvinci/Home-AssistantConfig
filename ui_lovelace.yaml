@@ -4,57 +4,57 @@ cch:
     - conditions:
         user_agent: Mobile
       config:
+        clock_format: '12'
         hide_tabs: '0'
         menu: hide
+        notifications: clock
         options: hide
         voice: show
-        notifications: clock
-        clock_format: '12'
     - conditions:
         user_agent: OS X
       config:
+        clock_format: '12'
         hide_tabs: '1,2'
         menu: show
-        voice: show
-        options: show
         notifications: clock
-        clock_format: '12'
+        options: show
+        voice: show
     - conditions:
         user_agent: Windows
       config:
+        clock_format: '12'
         hide_tabs: '1,2'
         menu: show
-        voice: show
-        options: show
         notifications: clock
-        clock_format: '12'
+        options: show
+        voice: show
+  hide_help: true
   notifications: clock
   swipe: true
   type: 'custom:compact-custom-header'
-  hide_help: true
 resources:
-  - type: js
-    url: /local/custom-cards/calendar-card.js?track=true
-  - type: module
-    url: /local/custom-cards/mini-graph-card-bundle.js?v=0.3.2
-  - type: module
-    url: /local/custom-cards/mini-media-player-bundle.js?v=1.0.3
   - type: js
     url: /local/custom-cards/plan-coordinates.js?v=2
   - type: module
-    url: /local/custom-cards/radial-menu.js
-  - type: module
     url: /customcards/github/custom-cards/tracker-card.js?track=true
-  - type: module
-    url: /customcards/github/nervetattoo/simple-thermostat.js?track=true
-  - type: module
-    url: /customcards/github/maykar/compact-custom-header.js?track=true
   - type: js
     url: /customcards/github/thomasloven/card-tools.js?track=true
   - type: js
     url: /customcards/github/thomasloven/layout-card.js?track=true
   - type: js
     url: /customcards/github/thomasloven/popup-card.js?track=true
+  - url: /community_plugin/calendar-card/calendar-card.js
+    type: js
+  - url: /community_plugin/radial-menu/radial-menu.js
+    type: module
+  - url: /community_plugin/mini-media-player/mini-media-player.js
+    type: module
+  - url: /community_plugin/mini-graph-card/mini-graph-card.js
+    type: module
+  - url: /community_plugin/compact-custom-header/compact-custom-header.js
+    type: module
+  - url: /community_plugin/simple-thermostat/simple-thermostat.js
+    type: module
 title: ''
 views:
   - cards:
@@ -556,7 +556,10 @@ views:
     title: Calendar
   - cards:
       - cards:
-          - type: 'custom:tracker-card'
+          - entities:
+              - entity: sensor.hacs
+            show_header_toggle: false
+            type: entities
         type: vertical-stack
     icon: 'mdi:chart-donut'
     title: Other
