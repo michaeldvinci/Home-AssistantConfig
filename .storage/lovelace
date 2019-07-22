@@ -52,26 +52,6 @@
             "resources": [
                 {
                     "type": "js",
-                    "url": "/local/custom-cards/plan-coordinates.js?v=2"
-                },
-                {
-                    "type": "module",
-                    "url": "/customcards/github/custom-cards/tracker-card.js?track=true"
-                },
-                {
-                    "type": "js",
-                    "url": "/customcards/github/thomasloven/card-tools.js?track=true"
-                },
-                {
-                    "type": "js",
-                    "url": "/customcards/github/thomasloven/layout-card.js?track=true"
-                },
-                {
-                    "type": "js",
-                    "url": "/customcards/github/thomasloven/popup-card.js?track=true"
-                },
-                {
-                    "type": "js",
                     "url": "/community_plugin/calendar-card/calendar-card.js"
                 },
                 {
@@ -93,6 +73,26 @@
                 {
                     "type": "module",
                     "url": "/community_plugin/simple-thermostat/simple-thermostat.js"
+                },
+                {
+                    "type": "js",
+                    "url": "/community_plugin/plan-coordinates/plan-coordinates.js"
+                },
+                {
+                    "type": "module",
+                    "url": "/customcards/github/custom-cards/tracker-card.js?track=true"
+                },
+                {
+                    "type": "js",
+                    "url": "/customcards/github/thomasloven/layout-card.js?track=true"
+                },
+                {
+                    "type": "js",
+                    "url": "/customcards/github/thomasloven/popup-card.js?track=true"
+                },
+                {
+                    "type": "js",
+                    "url": "/customcards/github/thomasloven/card-tools.js?track=true"
                 }
             ],
             "title": "",

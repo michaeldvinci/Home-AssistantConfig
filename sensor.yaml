@@ -1,11 +1,11 @@
 ### Network ###
-- platform: pi_hole
-  host: localhost:4865
-  location: ""
-  monitored_conditions:
-    - ads_blocked_today
-    - ads_percentage_today
-    - dns_queries_today
+# - platform: pi_hole
+#   host: localhost:4865
+#   location: ""
+#   monitored_conditions:
+#     - ads_blocked_today
+#     - ads_percentage_today
+#     - dns_queries_today
         
 - platform: systemmonitor
   resources:
